@@ -33,96 +33,96 @@
     <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav bg-black/40 backdrop-blur-lg"
         style="background-color: #3d484b;">
-        <div class="container mx-auto px-6">
+        <div class="container px-6 mx-auto">
             <div class="flex items-center justify-between py-2">
                 <!-- Logo -->
                 <div class="flex items-center space-x-4">
                     <a href="{{ route('home') }}" class="flex items-center space-x-2">
                         <img src="{{ asset('assets/images/logo.jpeg') }}" alt="Logo"
-                            class="w-auto h-16 md:h-20 shadow-lg">
+                            class="w-auto h-16 shadow-lg md:h-20">
                     </a>
                 </div>
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-2">
+                <nav class="items-center hidden space-x-2 lg:flex">
                     <a href="{{ route('home') }}"
-                        class="flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-white hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-home text-orange-400"></i>
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-home"></i>
                         <span>হোম</span>
                     </a>
                     <a href="{{ route('home') }}#registration"
-                        class="flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-white hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-user-plus text-orange-400"></i>
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-user-plus"></i>
                         <span>নিবন্ধন</span>
                     </a>
                     <a href="{{ route('registered-students.index') }}"
-                        class="flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-white hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-users text-orange-400"></i>
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-users"></i>
                         <span>নিবন্ধনকৃত শিক্ষার্থী</span>
                     </a>
-                    <a href="{{ route('alumni.index') }}"
-                        class="flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-white hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-users text-orange-400"></i>
+                    {{-- <a href="{{ route('alumni.index') }}"
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-users"></i>
                         <span>প্রাক্তন ছাত্র/ছাত্রী</span>
-                    </a>
+                    </a> --}}
                     <a href="{{ route('home') }}#events"
-                        class="flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-white hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-calendar text-orange-400"></i>
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-calendar"></i>
                         <span>কার্যক্রম</span>
                     </a>
                 </nav>
                 <!-- Action Buttons (Desktop) -->
-                <div class="hidden lg:flex items-center space-x-4">
+                <div class="items-center hidden space-x-4 lg:flex">
                     <a href="{{ route('home') }}#contact"
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center">
-                        <i class="fas fa-phone mr-2"></i> যোগাযোগ
+                        class="inline-flex items-center px-5 py-2 font-semibold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl hover:shadow-xl hover:scale-105">
+                        <i class="mr-2 fas fa-phone"></i> যোগাযোগ
                     </a>
                     <a onclick="showDonationModal()"
-                        class="bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center cursor-pointer">
-                        <i class="fa-solid fa-hand-holding-dollar mr-2"></i> ডোনেশন
+                        class="inline-flex items-center px-5 py-2 font-semibold text-white transition-all duration-300 shadow-lg cursor-pointer bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 rounded-xl hover:shadow-xl hover:scale-105">
+                        <i class="mr-2 fa-solid fa-hand-holding-dollar"></i> ডোনেশন
                     </a>
                 </div>
                 <!-- Mobile Hamburger -->
-                <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none">
+                <button id="menu-btn" class="text-2xl text-white lg:hidden focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="lg:hidden hidden flex flex-col bg-black/90 text-white px-6 py-4 space-y-3 transition-all duration-300">
-            <a href="{{ route('home') }}" class="flex items-center space-x-2 py-2 border-b border-gray-700">
-                <i class="fas fa-home text-orange-400"></i><span>হোম</span>
+            class="flex flex-col hidden px-6 py-4 space-y-3 text-white transition-all duration-300 lg:hidden bg-black/90">
+            <a href="{{ route('home') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-home"></i><span>হোম</span>
             </a>
             <a href="{{ route('home') }}#registration"
-                class="flex items-center space-x-2 py-2 border-b border-gray-700">
-                <i class="fas fa-user-plus text-orange-400"></i><span>নিবন্ধন</span>
+                class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-user-plus"></i><span>নিবন্ধন</span>
             </a>
-            <a href="{{ route('alumni.index') }}" class="flex items-center space-x-2 py-2 border-b border-gray-700">
-                <i class="fas fa-users text-orange-400"></i><span>নিবন্ধনকৃত শিক্ষার্থী</span>
+            <a href="{{ route('alumni.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-users"></i><span>নিবন্ধনকৃত শিক্ষার্থী</span>
             </a>
 
             <a href="{{ route('alumni.index') }}" rel="noopener noreferrer"
-                class="flex items-center space-x-2 py-2 border-b border-gray-700">
-                <i class="fas fa-users text-orange-400"></i>
+                class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-users"></i>
                 <span>নিবন্ধনকৃত শিক্ষার্থী</span>
             </a>
 
-            <a href="{{ route('home') }}#events" class="flex items-center space-x-2 py-2 border-b border-gray-700">
-                <i class="fas fa-calendar text-orange-400"></i><span>কার্যক্রম</span>
+            <a href="{{ route('home') }}#events" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-calendar"></i><span>কার্যক্রম</span>
             </a>
             <a href="{{ route('home') }}#contact"
-                class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:scale-105 inline-flex items-center">
-                <i class="fas fa-phone mr-2"></i> যোগাযোগ
+                class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:scale-105">
+                <i class="mr-2 fas fa-phone"></i> যোগাযোগ
             </a>
             <a onclick="showDonationModal()"
-                class="bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:scale-105 inline-flex items-center cursor-pointer">
-                <i class="fa-solid fa-hand-holding-dollar mr-2"></i> ডোনেশন
+                class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg cursor-pointer bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-xl hover:scale-105">
+                <i class="mr-2 fa-solid fa-hand-holding-dollar"></i> ডোনেশন
             </a>
         </div>
     </header>
 
     <a href="#top" id="scrollTopBtn" title="Go to top"
-        class="fixed bottom-5 right-5 z-50 px-3 py-2 text-white bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-2xl transition-opacity opacity-0 pointer-events-none">
+        class="fixed z-50 px-3 py-2 text-white transition-opacity shadow-2xl opacity-0 pointer-events-none bottom-5 right-5 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -137,9 +137,9 @@
     @include('partials.rules-modal')
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-12 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 text-center">
+    <footer class="pt-12 pb-10 text-white bg-gray-900">
+        <div class="px-6 mx-auto max-w-7xl">
+            <div class="grid gap-8 text-center md:grid-cols-3">
                 <!-- Column 1: Logo & Intro -->
                 <div class="md:col-span-2 sm:col-span-2 lg:col-span-2">
                     <a href="{{ route('home') }}">
@@ -148,37 +148,37 @@
                                 <img src="{{ asset('assets/images/logo.jpeg') }}" alt="Logo" class="w-12 h-12">
                             </div>
                             <div>
-                                <h3 class="font-bold mb-2">গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</h3>
+                                <h3 class="mb-2 font-bold">গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</h3>
                                 <p class="text-sm text-gray-400">পুনর্মিলনী ২০২৬</p>
                             </div>
                         </div>
                     </a>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-sm text-gray-400">
                         আমাদের বিদ্যালয়ের সকল প্রাক্তন ও বর্তমান শিক্ষার্থীদের একসাথে নিয়ে আসার প্রচেষ্টা।
                     </p>
                 </div>
 
                 <!-- Column 3: Contact Info -->
                 <div>
-                    <h4 class="font-bold mb-2">যোগাযোগের তথ্য</h4>
+                    <h4 class="mb-2 font-bold">যোগাযোগের তথ্য</h4>
                     <ul class="space-y-2 text-sm">
-                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i>01610333033</li>
-                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i>reunion.gsahs@gmail.com</li>
-                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>গোটিয়া, মেছরা, সিরাজগঞ্জ
+                        <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033</li>
+                        <li class="text-gray-400"><i class="mr-2 fas fa-envelope"></i>reunion.gsahs@gmail.com</li>
+                        <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছরা, সিরাজগঞ্জ
                         </li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Social & Payment -->
                 <div class="text-center">
-                    <h4 class="font-bold mb-3">অন্যান্য লিঙ্ক</h4>
-                    <div class="flex justify-center space-x-4 mb-6">
+                    <h4 class="mb-3 font-bold">অন্যান্য লিঙ্ক</h4>
+                    <div class="flex justify-center mb-6 space-x-4">
                         <a href="#" target="_blank"
-                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            class="flex items-center justify-center w-10 h-10 transition-colors bg-blue-600 rounded-full hover:bg-blue-700">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            class="flex items-center justify-center w-10 h-10 transition-colors bg-red-600 rounded-full hover:bg-blue-500">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
@@ -186,8 +186,8 @@
             </div>
 
             <!-- Bottom Footer -->
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400 text-sm">
+            <div class="pt-8 mt-8 text-center border-t border-gray-800">
+                <p class="text-sm text-gray-400">
                     © ২০২৬ গোটিয়া শোমসের আলী উচ্চ বিদ্যালয় । সকল অধিকার সংরক্ষিত | ডেভেলপ করেছেন পুনর্মিলনী কমিটি
                 </p>
             </div>

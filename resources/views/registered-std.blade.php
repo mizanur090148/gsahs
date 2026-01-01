@@ -5,7 +5,7 @@
 @section('content')
     <div>
         <!-- Hero Section -->
-        {{-- <section id="" class="hero-bg h-fit flex justify-center items-end"
+        {{-- <section id="" class="flex items-end justify-center hero-bg h-fit"
             style="background:
     linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85)),
     radial-gradient(ellipse at top, rgba(99, 102, 241, 0.3), transparent 70%),
@@ -16,20 +16,20 @@
     background-attachment: fixed;
     padding-top:150px;">
             <div class="text-center">
-                <div class="max-w-6xl mx-auto px-3">
-                    <h1 class="text-6xl md:text-8xl lg:text-8xl font-black mb-8 leading-none text-white">
+                <div class="max-w-6xl px-3 mx-auto">
+                    <h1 class="mb-8 text-6xl font-black leading-none text-white md:text-8xl lg:text-8xl">
                         স্বাগতম পুনর্মিলনী ২০২৬
                     </h1>
 
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+                    <div class="flex flex-col items-center justify-center gap-6 mb-20 sm:flex-row">
                         <a href="#registration"
-                            class="bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 text-white px-12 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105">
-                            <i class="fas fa-user-plus mr-3"></i>
+                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 hover:scale-105">
+                            <i class="mr-3 fas fa-user-plus"></i>
                             নিবন্ধন করুন
                         </a>
                         <a href="#news"
-                            class="border-2 border-white text-white px-12 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900">
-                            <i class="fas fa-bullhorn mr-3"></i>
+                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:scale-105 hover:bg-white hover:text-gray-900">
+                            <i class="mr-3 fas fa-bullhorn"></i>
                             সর্বশেষ ঘোষণা
                         </a>
                     </div>
@@ -39,153 +39,173 @@
 
         <!-- Statistics Section -->
         <section id="stats" class="py-8 bg-gradient-to-br from-gray-50 to-white">
-            <div class="max-w-7xl mx-auto px-6" style="margin-top: 6rem">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-gradient">পরিসংখ্যান</h2>
+            <div class="px-6 mx-auto max-w-7xl" style="margin-top: 6rem">
+                <div class="mb-4 text-center">
+                    <h2 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পরিসংখ্যান</h2>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-4">
+                <div class="grid grid-cols-2 gap-6 md:grid-cols-2 md:gap-4">
                     <!-- Card 1 -->
-                    <div class="stats-card group">
-                        <div class="counter text-5xl font-black text-blue-600 mb-3" data-target="{{ $studentCount }}">0
+                    <div class="stats-card stats-card-custom group">
+                        <div class="text-5xl font-black text-blue-600 counter" data-target="{{ $studentCount }}">0
                         </div>
-                        <div class="text-gray-700 font-semibold text-lg">নিবন্ধনকৃত শিক্ষার্থী</div>
-                        <div class="mt-3 w-full bg-blue-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="text-lg font-semibold text-gray-700">নিবন্ধনকৃত শিক্ষার্থী</div>
+                        <div class="w-full h-2 mt-2 overflow-hidden bg-blue-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
                                 style="width: 1419%"></div>
                         </div>
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="stats-card group">
-                        <div class="counter text-5xl font-black text-purple-500 mb-3" data-target="{{ $relativesCount }}">0
+                    <div class="stats-card stats-card-custom group">
+                        <div class="text-5xl font-black text-purple-500 counter" data-target="{{ $relativesCount }}">0
                         </div>
-                        <div class="text-gray-700 font-semibold text-lg">নিবন্ধনকৃত শিক্ষার্থীর পরিবারের সদস্য</div>
-                        <div class="mt-3 w-full bg-blue-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-purple-500 to-purple-700 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="text-lg font-semibold text-gray-700">নিবন্ধনকৃত শিক্ষার্থীর পরিবারের সদস্য</div>
+                        <div class="w-full h-2 mt-2 overflow-hidden bg-blue-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-purple-500 to-purple-700"
                                 style="width: 190%"></div>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="stats-card group">
-                        <div class="counter text-5xl font-black text-green-600 mb-3" data-target="38">0</div>
-                        <div class="text-gray-700 font-semibold text-lg">অননুমোদিত শিক্ষার্থীরা</div>
-                        <div class="mt-3 w-full bg-green-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                    {{-- <div class="stats-card group">
+                        <div class="mb-3 text-5xl font-black text-green-600 counter" data-target="38">0</div>
+                        <div class="text-lg font-semibold text-gray-700">অননুমোদিত শিক্ষার্থীরা</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-green-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-green-500 to-emerald-600"
                                 style="width: 38%"></div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-gradient-to-br from-white to-gray-50">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">
+        <section class="py-8 bg-gradient-to-br from-white to-gray-50">
+            <div class="px-6 mx-auto max-w-7xl">
+                <div class="mb-8 text-center">
+                    <h2 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">
                         নিবন্ধনকৃত শিক্ষার্থীর তালিকা
                     </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
                 </div>
 
                 <!-- Search Filters -->
-                <form method="GET" action="{{ route('alumni.index') }}" class="grid md:grid-cols-2 gap-6 mb-8">
+                <form method="GET" action="{{ route('registered-students.index') }}"
+                    class="mx-auto max-w-5xl grid gap-6 mb-8 md:grid-cols-4 items-end">
+
+                    <!-- Name -->
                     <div>
-                        <label class="block text-gray-700 font-semibold mb-2 flex items-center">
-                            <i class="fas fa-search text-blue-600 mr-2"></i> নাম দিয়ে খুঁজুন
+                        <label class="flex items-center mb-2 font-semibold text-gray-700">
+                            <i class="mr-2 text-blue-600 fas fa-search"></i>
+                            নাম দিয়ে খুঁজুন
                         </label>
-                        <input type="text" name="name" value="{{ request('name') }}" class="form-input w-full"
+
+                        <input type="text" name="name" value="{{ request('name') }}" class="w-full form-input"
                             placeholder="যেমন: মোহাম্মদ আব্দুল করিম">
                     </div>
 
+                    <!-- Batch -->
                     <div>
-                        <label class="block text-gray-700 font-semibold mb-2 flex items-center">
-                            <i class="fas fa-graduation-cap text-green-600 mr-2"></i> ব্যাচ/সাল
+                        <label class="flex items-center mb-2 font-semibold text-gray-700">
+                            <i class="mr-2 text-green-600 fas fa-graduation-cap"></i>
+                            ব্যাচ/সাল
                         </label>
-                        <select name="batch" class="form-input w-full">
+
+                        <select name="batch" class="w-full form-input">
                             <option value="">বছর নির্বাচন করুন</option>
                             @for ($year = 2025; $year >= 1964; $year--)
                                 <option value="{{ $year }}" {{ request('batch') == $year ? 'selected' : '' }}>
-                                    {{ $year }}</option>
+                                    {{ $year }}
+                                </option>
                             @endfor
                         </select>
                     </div>
 
-                    <div class="md:col-span-2">
+                    <!-- Button -->
+                    <div class="flex items-end">
                         <button type="submit"
-                            class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                            <i class="fas fa-search mr-2"></i> খুঁজুন
+                            class="w-full px-6 py-3 font-semibold text-white transition-all duration-300
+                       rounded-lg bg-gradient-to-r from-blue-600 to-purple-600
+                       hover:from-blue-700 hover:to-purple-700">
+                            <i class="mr-2 fas fa-search"></i>
+                            খুঁজুন
                         </button>
                     </div>
                 </form>
 
                 <!-- Alumni Cards -->
-                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="grid gap-6 md:grid-cols-5 lg:grid-cols-6">
                     @foreach ($alumni as $alumnus)
-                        <div class="alumni-card group relative overflow-hidden rounded-lg bg-white shadow-md
-         hover:shadow-lg transition-all duration-200
-         transform hover:-translate-y-0.5 max-w-sm mx-auto"
+                        <div class="alumni-card group relative overflow-hidden rounded-xl bg-white shadow-md
+                   hover:shadow-xl transition-all duration-300
+                   transform hover:-translate-y-1 max-w-sm mx-auto"
                             data-name="{{ strtolower($alumnus->name) }}" data-batch="{{ $alumnus->batch }}">
-                            <!-- Card Header -->
-                            <div class="relative h-36 overflow-hidden">
-                                <img @if ($alumnus->photo) src="{{ asset('storage/' . $alumnus->photo) }}" @else  src="{{ asset('/assets/images/student.jpeg') }}" @endif
+
+                            <!-- Image Section -->
+                            <div class="flex justify-center pt-6">
+                                <img @if ($alumnus->photo) src="{{ asset('storage/' . $alumnus->photo) }}"
+                    @else
+                        src="{{ asset('/assets/images/student.jpeg') }}" @endif
                                     alt="{{ $alumnus->name }}"
-                                    class="w-20 h-20 object-cover group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute bottom-4 left-4">
-                                    <span
-                                        class="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                        ব্যাচ {{ $alumnus->batch }}
-                                    </span>
-                                </div>
+                                    class="w-24 h-24 rounded-full object-cover border-4 border-white
+                           shadow-md transition-transform duration-300
+                           group-hover:scale-105">
                             </div>
 
                             <!-- Card Body -->
-                            <div class="p-6">
+                            <div class="p-1 text-center">
                                 <h3
-                                    class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                    class="mb-1 mt-1 text-sm font-bold text-gray-900
+                           transition-colors group-hover:text-blue-600">
                                     {{ $alumnus->name }}
                                 </h3>
 
-                                <div class="space-y-2 text-sm text-gray-600">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-user-tie mr-2 text-blue-500"></i>
-                                        <span>{{ $alumnus->profession ?? 'পেশা উল্লেখ নেই' }}</span>
+                                <div class="space-y-2 text-sm custom-card text-gray-600">
+                                    <div class="flex items-center justify-center">
+                                        <span class="px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
+                                            ব্যাচ - {{ $alumnus->batch }}
+                                        </span>
                                     </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-phone mr-2 text-green-500"></i>
+                                    <div class="flex items-center justify-center">
+                                        <i class="mr-2 text-green-500 fas fa-phone"></i>
                                         <span>{{ $alumnus->phone }}</span>
                                     </div>
+
                                     @if ($alumnus->email)
-                                        <div class="flex items-center">
-                                            <i class="fas fa-envelope mr-2 text-purple-500"></i>
-                                            <span class="truncate">{{ $alumnus->email }}</span>
+                                        <div class="flex items-center justify-center">
+                                            <i class="mr-2 text-purple-500 fas fa-envelope"></i>
+                                            <span class="truncate max-w-[220px]">{{ $alumnus->email }}</span>
+                                        </div>
+                                    @endif
+                                    @if ($alumnus->tshirt)
+                                        <div class="flex items-center justify-center">
+                                            <i class="mr-1 fas fa-t-shirt"></i>
+                                            <span class="truncate max-w-[220px]">{{ $alumnus->tshirt }}</span>
                                         </div>
                                     @endif
                                 </div>
 
-                                <div class="mt-4 pt-4 border-t border-gray-100">
-                                    <div class="flex items-center justify-between">
-                                        <span class="text-sm text-gray-500">
-                                            <i class="fas fa-t-shirt mr-1"></i>
-                                            গেঞ্জি: {{ $alumnus->tshirt }}
-                                        </span>
-                                        <span class="text-sm text-gray-500">
-                                            <i class="fas fa-tint mr-1"></i>
-                                            {{ $alumnus->blood }}
-                                        </span>
-                                    </div>
-                                </div>
+                                <!-- Footer -->
+                                {{-- <div
+                                    class="pt-4 mt-4 border-t border-gray-100 flex justify-center gap-6 text-sm text-gray-500">
+                                    <span>
+                                        <i class="mr-1 fas fa-t-shirt"></i>
+                                        {{ $alumnus->tshirt }}
+                                    </span>
+                                    <span>
+                                        <i class="mr-1 fas fa-tint"></i>
+                                        {{ $alumnus->blood }}
+                                    </span>
+                                </div> --}}
                             </div>
                         </div>
                     @endforeach
                 </div>
 
                 @if ($alumni->isEmpty())
-                    <div class="text-center py-12">
-                        <i class="fas fa-users text-gray-300 text-6xl mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-700 mb-2">কোনো প্রাক্তন শিক্ষার্থী পাওয়া যায়নি</h3>
+                    <div class="py-12 text-center">
+                        <i class="mb-4 text-6xl text-gray-300 fas fa-users"></i>
+                        <h3 class="mb-2 text-2xl font-bold text-gray-700">কোনো প্রাক্তন শিক্ষার্থী পাওয়া যায়নি</h3>
                         <p class="text-gray-600">আপনার অনুসন্ধানের সাথে মিল রেখে কোনো ফলাফল পাওয়া যায়নি</p>
                     </div>
                 @endif

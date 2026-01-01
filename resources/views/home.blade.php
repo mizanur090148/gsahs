@@ -5,7 +5,7 @@
 @section('content')
     <div>
         <!-- Hero Section -->
-        <section id="" class="hero-bg h-fit flex justify-center items-end"
+        <section id="" class="flex items-end justify-center hero-bg h-fit"
             style="background:
     linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85)),
     radial-gradient(ellipse at top, rgba(99, 102, 241, 0.3), transparent 70%),
@@ -16,20 +16,34 @@
     background-attachment: fixed;
     padding-top:150px;">
             <div class="text-center">
+                @if (session('success'))
+                    <div class="fixed z-50 top-6 right-6" data-flash>
+                        <div
+                            class="flex items-center px-6 py-4 text-green-800 bg-green-100 border border-green-300 shadow-lg rounded-xl transition-all duration-500">
+                            <i class="mr-3 text-2xl fas fa-check-circle text-green-600"></i>
+                            <span class="font-semibold">
+                                {{ session('success') }}
+                            </span>
+                        </div>
+                    </div>
+                @endif
                 <div class="max-w-6xl mx-auto px-3">
-                    <h1 class="text-6xl md:text-8xl lg:text-8xl font-black mb-8 leading-none text-white">
-                        স্বাগতম পুনর্মিলনী ২০২৬
+                    <h1 class="text-6xl md:text-7xl lg:text-7xl font-black mb-5 leading-none text-white">
+                        স্বাগতম গ্র্যান্ড পুনর্মিলনী - ২০২৬
                     </h1>
+                    <h3 class="mb-8 text-4xl font-black leading-none text-white md:text-4xl lg:text-4xl">
+                        গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়
+                    </h3>
 
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+                    <div class="flex flex-col items-center justify-center gap-6 mb-20 sm:flex-row">
                         <a href="#registration"
-                            class="bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 text-white px-12 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105">
-                            <i class="fas fa-user-plus mr-3"></i>
+                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 hover:scale-105">
+                            <i class="mr-3 fas fa-user-plus"></i>
                             নিবন্ধন করুন
                         </a>
                         <a href="#news"
-                            class="border-2 border-white text-white px-12 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900">
-                            <i class="fas fa-bullhorn mr-3"></i>
+                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:scale-105 hover:bg-white hover:text-gray-900">
+                            <i class="mr-3 fas fa-bullhorn"></i>
                             সর্বশেষ ঘোষণা
                         </a>
                     </div>
@@ -39,26 +53,26 @@
 
         <!-- Statistics Section -->
         <section id="stats" class="py-8 bg-gradient-to-br from-gray-50 to-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-gradient">পরিসংখ্যান</h2>
+            <div class="px-6 mx-auto max-w-7xl">
+                <div class="mb-8 text-center">
+                    <h2 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পরিসংখ্যান</h2>
                     <p class="text-xl text-gray-600">পুনর্মিলনী সংক্রান্ত সকল গুরুত্বপূর্ণ তথ্য এবং আপডেট</p>
-                    <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-3 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+                <div class="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-4">
                     <!-- Card 1 -->
                     <div class="stats-card group">
                         <div
-                            class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/30">
+                            class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-500 shadow-lg bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl group-hover:scale-110 group-hover:shadow-blue-500/30">
                             <i
-                                class="fas fa-user text-3xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+                                class="text-3xl text-white transition-transform duration-300 fas fa-user group-hover:rotate-12"></i>
                         </div>
-                        <div class="counter text-5xl font-black text-blue-600 mb-3" data-target="{{ $studentCount }}">0
+                        <div class="mb-3 text-5xl font-black text-blue-600 counter" data-target="{{ $studentCount }}">0
                         </div>
-                        <div class="text-gray-700 font-semibold text-lg">নিবন্ধনকৃত শিক্ষার্থী</div>
-                        <div class="mt-3 w-full bg-blue-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="text-lg font-semibold text-gray-700">নিবন্ধনকৃত শিক্ষার্থী</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-blue-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
                                 style="width: 1419%"></div>
                         </div>
                     </div>
@@ -66,96 +80,96 @@
                     <!-- Card 5 -->
                     <div class="stats-card group">
                         <div
-                            class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/30">
+                            class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-500 shadow-lg bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl group-hover:scale-110 group-hover:shadow-blue-500/30">
                             <i
-                                class="fas fa-users text-3xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+                                class="text-3xl text-white transition-transform duration-300 fas fa-users group-hover:rotate-12"></i>
                         </div>
-                        <div class="counter text-5xl font-black text-purple-500 mb-3" data-target="{{ $relativesCount }}">0
+                        <div class="mb-3 text-5xl font-black text-purple-500 counter" data-target="{{ $relativesCount }}">0
                         </div>
-                        <div class="text-gray-700 font-semibold text-lg">নিবন্ধনকৃত শিক্ষার্থীর পরিবারের সদস্য</div>
-                        <div class="mt-3 w-full bg-blue-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-purple-500 to-purple-700 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="text-lg font-semibold text-gray-700">নিবন্ধনকৃত শিক্ষার্থীর পরিবারের সদস্য</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-blue-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-purple-500 to-purple-700"
                                 style="width: 190%"></div>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="stats-card group">
+                    {{-- <div class="stats-card group">
                         <div
-                            class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-green-500/30">
+                            class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-500 shadow-lg bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl group-hover:scale-110 group-hover:shadow-green-500/30">
                             <i
-                                class="fas fa-graduation-cap text-3xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+                                class="text-3xl text-white transition-transform duration-300 fas fa-graduation-cap group-hover:rotate-12"></i>
                         </div>
-                        <div class="counter text-5xl font-black text-green-600 mb-3" data-target="38">0</div>
-                        <div class="text-gray-700 font-semibold text-lg">অননুমোদিত শিক্ষার্থীরা</div>
-                        <div class="mt-3 w-full bg-green-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="mb-3 text-5xl font-black text-green-600 counter" data-target="38">0</div>
+                        <div class="text-lg font-semibold text-gray-700">অননুমোদিত শিক্ষার্থীরা</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-green-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-green-500 to-emerald-600"
                                 style="width: 38%"></div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Card 4 -->
                     <div class="stats-card group">
                         <div
-                            class="w-20 h-20 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-red-500/30">
+                            class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-500 shadow-lg bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl group-hover:scale-110 group-hover:shadow-red-500/30">
                             <i
-                                class="fas fa-clock text-3xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+                                class="text-3xl text-white transition-transform duration-300 fas fa-clock group-hover:rotate-12"></i>
                         </div>
-                        <div class="counter text-5xl font-black text-red-600 mb-3" data-target="87.790978037882">0</div>
-                        <div class="text-gray-700 font-semibold text-lg">দিন বাকি</div>
-                        <div class="mt-3 w-full bg-red-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-red-500 to-pink-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="mb-3 text-5xl font-black text-red-600 counter" data-target="87.790978037882">0</div>
+                        <div class="text-lg font-semibold text-gray-700">দিন বাকি</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-red-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-red-500 to-pink-600"
                                 style="width: 87.790978037882%"></div>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="stats-card group">
+                    {{-- <div class="stats-card group">
                         <div
-                            class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-yellow-500/30">
+                            class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-500 shadow-lg bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl group-hover:scale-110 group-hover:shadow-yellow-500/30">
                             <i
-                                class="fas fa-calendar text-3xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+                                class="text-3xl text-white transition-transform duration-300 fas fa-calendar group-hover:rotate-12"></i>
                         </div>
-                        <div class="counter text-5xl font-black text-orange-600 mb-3" data-target="5">0</div>
-                        <div class="text-gray-700 font-semibold text-lg">সব খবর</div>
-                        <div class="mt-3 w-full bg-orange-100 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-yellow-500 to-orange-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                        <div class="mb-3 text-5xl font-black text-orange-600 counter" data-target="5">0</div>
+                        <div class="text-lg font-semibold text-gray-700">সব খবর</div>
+                        <div class="w-full h-2 mt-3 overflow-hidden bg-orange-100 rounded-full">
+                            <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-yellow-500 to-orange-500"
                                 style="width: 5%"></div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
 
         <!-- Registration Section -->
         <section id="registration" class="py-16 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="text-center mb-6">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">পুনর্মিলনীর জন্য নিবন্ধন
+            <div class="max-w-4xl px-6 mx-auto">
+                <div class="mb-6 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পুনর্মিলনীর জন্য নিবন্ধন
                     </h2>
                     <p class="text-xl text-gray-600">আপনার তথ্য পূরণ করে রিইউনিয়নে অংশগ্রহণ নিশ্চিত করুন, আমরা রিইউনিয়ন
                         অনুষ্ঠানে আপনাকে দেখার অপেক্ষায় আছি!</p>
-                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div class="p-8 bg-white border border-gray-100 shadow-lg rounded-2xl">
                     <div class="text-center">
                         <!-- Content can be added here if needed -->
                     </div>
                     <form action="{{ route('students.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                                <!-- Content can be added here -->
+                            {{-- <h3 class="flex items-center mb-3 text-xl font-bold text-gray-900"> --}}
+                            <!-- Content can be added here -->
                             </h3>
                             <div class="space-y-6">
                                 <!-- Registration Type -->
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-3">আপনি কি একাই রেজিস্ট্রেশন করতে
+                                    <label class="block mb-3 font-semibold text-gray-700">আপনি কি একাই রেজিস্ট্রেশন করতে
                                         চান? <span class="text-red-500">*</span></label>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2">
+                                    <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
                                         <label for="radioSingle"
-                                            class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors space-x-3">
+                                            class="flex items-center p-4 space-x-3 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                             <input type="radio" name="registration_type" value="single" id="radioSingle"
                                                 class="w-5 h-5 text-blue-600">
                                             <div>
@@ -164,7 +178,7 @@
                                             </div>
                                         </label>
                                         <label for="radioGroup"
-                                            class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors space-x-3">
+                                            class="flex items-center p-4 space-x-3 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                             <input type="radio" name="registration_type" value="group" id="radioGroup"
                                                 class="w-5 h-5 text-blue-600">
                                             <div>
@@ -175,12 +189,12 @@
                                     </div>
                                 </div>
 
-                                <div id="groupSelectWrapper" class="mb-6 hidden">
-                                    <label class="block text-gray-700 font-semibold mb-2">আপনি সহ কতজন অংশগ্রহণ করতে চান?
+                                <div id="groupSelectWrapper" class="hidden mb-6">
+                                    <label class="block mb-2 font-semibold text-gray-700">আপনি সহ কতজন অংশগ্রহণ করতে চান?
                                         <span class="text-red-500">*</span></label>
                                     <select id="participantCount" name="participant_count" class="form-input">
                                         <option value="">অংশগ্রহণকারীর সংখ্যা নির্বাচন করুন</option>
-                                        @for ($i = 2; $i <= 10; $i++)
+                                        @for ($i = 2; $i <= 7; $i++)
                                             <option value="{{ $i }}">{{ $i }} জন (আমি +
                                                 {{ $i - 1 }} জন)</option>
                                         @endfor
@@ -190,36 +204,59 @@
                         </div>
 
                         <!-- Payment Section -->
-                        <div class="mb-6 p-6 rounded-xl border border-blue-200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 mb-6 border border-blue-200 rounded-xl">
+                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                                 <div>
-                                    <label class="block text-blue-700 font-bold text-2xl md:text-3xl mb-5">
+                                    <label class="block mb-2 text-2xl font-bold text-blue-700 md:text-2xl">
                                         মোট পেমেন্ট (টাকা) <span class="text-red-500">*</span>
                                     </label>
                                     <input type="text" id="totalAmount" name="amount"
-                                        class="form-input bg-gray-100 w-full" value="০" readonly>
+                                        class="w-full bg-gray-100 form-input" value="০" readonly>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Personal Information -->
                         <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                                <i class="fas fa-user text-blue-600 mr-3"></i> ব্যক্তিগত তথ্য
+                            <h3 class="flex items-center mb-4 text-xl font-bold text-gray-900">
+                                <i class="mr-3 text-blue-600 fas fa-user"></i> ব্যক্তিগত তথ্য
                             </h3>
-                            <div class="grid md:grid-cols-2 gap-6">
+                            <div class="grid gap-6 md:grid-cols-2">
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">পূর্ণ নাম <span
+                                    <label class="block mb-2 font-semibold text-gray-700">পূর্ণ নাম <span
                                             class="text-red-500">*</span></label>
                                     <input type="text" name="name" class="form-input" value="{{ old('name') }}"
                                         placeholder="যেমন: মোহাম্মদ আব্দুল করিম">
                                     @error('name')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ 'আপনার পূর্ণ নাম লিখুন' }}</span>
                                     @enderror
                                 </div>
-
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">এসএসসি ব্যাচ<span
+                                    <label class="block mb-2 font-semibold text-gray-700">পিতার নাম <span
+                                            class="text-red-500">*</span></label>
+                                    <input type="text" name="father_name" class="form-input"
+                                        value="{{ old('father_name') }}">
+                                    @error('father_name')
+                                        <span class="text-sm text-red-500">{{ 'আপনার পিতার নাম লিখুন' }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="grid gap-6 mt-6 md:grid-cols-1">
+                                <div>
+                                    <label class="block mb-2 font-semibold text-gray-700">আপনার ছবি আপলোড
+                                        {{-- <span class="text-red-500">*</span> --}}
+                                    </label>
+                                    <input type="file" name="photo" class="form-input">
+                                    @error('photo')
+                                        <span class="text-sm text-red-500">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="grid gap-6 mt-6 md:grid-cols-1">
+                                <div>
+                                    <label class="block mb-2 font-semibold text-gray-700">এসএসসি ব্যাচ<span
                                             class="text-red-500">*</span></label>
                                     <select name="batch" class="form-input">
                                         <option value="">এসএসসি ব্যাচ সিলেক্ট করুন</option>
@@ -229,62 +266,18 @@
                                         @endfor
                                     </select>
                                     @error('batch')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6 mt-6">
-                                <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">পিতার নাম <span
-                                            class="text-red-500">*</span></label>
-                                    <input type="text" name="father_name" class="form-input"
-                                        value="{{ old('father_name') }}">
-                                    @error('father_name')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">রক্তের গ্রুপ <span
-                                            class="text-red-500">*</span></label>
-                                    <select name="blood" class="form-input">
-                                        <option value="">রক্তের গ্রুপ নির্বাচন করুন</option>
-                                        <option value="A+" {{ old('blood') == 'A+' ? 'selected' : '' }}>🩸 A+</option>
-                                        <option value="A-" {{ old('blood') == 'A-' ? 'selected' : '' }}>🩸 A-</option>
-                                        <option value="B+" {{ old('blood') == 'B+' ? 'selected' : '' }}>🩸 B+</option>
-                                        <option value="B-" {{ old('blood') == 'B-' ? 'selected' : '' }}>🩸 B-</option>
-                                        <option value="AB+" {{ old('blood') == 'AB+' ? 'selected' : '' }}>🩸 AB+
-                                        </option>
-                                        <option value="AB-" {{ old('blood') == 'AB-' ? 'selected' : '' }}>🩸 AB-
-                                        </option>
-                                        <option value="O+" {{ old('blood') == 'O+' ? 'selected' : '' }}>🩸 O+</option>
-                                        <option value="O-" {{ old('blood') == 'O-' ? 'selected' : '' }}>🩸 O-</option>
-                                    </select>
-                                    @error('blood')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div> --}}
-                            </div>
-
-                            <div class="grid md:grid-cols-1 gap-6 mt-6">
-                                <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">ছবি আপলোড <span
-                                            class="text-red-500">*</span></label>
-                                    <input type="file" name="photo" class="form-input">
-                                    @error('photo')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ 'এসএসসি ব্যাচ সিলেক্ট করুন' }}</span>
                                     @enderror
                                 </div>
                             </div>
 
                             <div class="mt-6">
-                                <label class="block text-gray-700 font-semibold mb-2">গেঞ্জির সাইজ <span
+                                <label class="block mb-2 font-semibold text-gray-700">গেঞ্জির সাইজ <span
                                         class="text-red-500">*</span></label>
-                                <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+                                <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
                                     @foreach (['S', 'M', 'L', 'XL', 'XXL'] as $size)
                                         <label
-                                            class="flex items-center justify-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                                            class="flex items-center justify-center p-3 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                             <input type="radio" name="tshirt" value="{{ $size }}"
                                                 class="sr-only" {{ old('tshirt') == $size ? 'checked' : '' }}>
                                             <span class="font-semibold">👕 {{ $size }}</span>
@@ -292,121 +285,133 @@
                                     @endforeach
                                 </div>
                                 @error('tshirt')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-500">{{ 'গেঞ্জির সাইজ সিলেক্ট করুন' }}</span>
                                 @enderror
                             </div>
                         </div>
 
                         <!-- Contact Information -->
                         <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                                <i class="fas fa-phone text-purple-600 mr-3"></i> যোগাযোগের তথ্য
+                            <h3 class="flex items-center mb-4 text-xl font-bold text-gray-900">
+                                <i class="mr-3 text-purple-600 fas fa-phone"></i> যোগাযোগের তথ্য
                             </h3>
-                            <div class="grid md:grid-cols-2 gap-6">
+                            <div class="grid gap-6 md:grid-cols-2">
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">মোবাইল নম্বর <span
+                                    <label class="block mb-2 font-semibold text-gray-700">মোবাইল নম্বর <span
                                             class="text-red-500">*</span></label>
                                     <input type="tel" name="phone" class="form-input"
                                         value="{{ old('phone') }}">
                                     @error('phone')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ 'আপনার মোবাইল নম্বর লিখুন' }}</span>
                                     @enderror
                                 </div>
 
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">ইমেইল ঠিকানা</label>
+                                    <label class="block mb-2 font-semibold text-gray-700">ইমেইল ঠিকানা</label>
                                     <input type="email" name="email" class="form-input"
                                         value="{{ old('email') }}">
                                     @error('email')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
 
                             {{-- <div class="mt-6">
-                                <label class="block text-gray-700 font-semibold mb-2">পেশা</label>
+                                <label class="block mb-2 font-semibold text-gray-700">পেশা</label>
                                 <input type="text" name="profession" class="form-input"
                                     value="{{ old('profession') }}">
                                 @error('profession')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div> --}}
                         </div>
 
                         <!-- Address Information -->
-                        <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                                <i class="fas fa-map-marker-alt text-red-600 mr-3"></i> ঠিকানার তথ্য
+                        <div class="mb-4">
+                            <h3 class="flex items-center mb-4 text-xl font-bold text-gray-900">
+                                <i class="mr-3 text-red-600 fas fa-map-marker-alt"></i> ঠিকানার তথ্য
                             </h3>
 
                             <div class="space-y-6">
                                 <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">ঠিকানা <span
+                                    <label class="block mb-2 font-semibold text-gray-700">ঠিকানা <span
                                             class="text-red-500">*</span></label>
-                                    <textarea name="present_address" class="form-input h-20">{{ old('present_address') }}</textarea>
+                                    <textarea name="present_address" class="h-15 form-input">{{ old('present_address') }}</textarea>
                                     @error('present_address')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ 'আপনার ঠিকানা লিখুন' }}</span>
                                     @enderror
                                 </div>
+                            </div>
+                        </div>
 
-                                {{-- <div>
-                                    <label class="block text-gray-700 font-semibold mb-2">স্থায়ী ঠিকানা <span
-                                            class="text-red-500">*</span></label>
-                                    <textarea name="permanent_address" class="form-input h-20">{{ old('permanent_address') }}</textarea>
-                                    @error('permanent_address')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div> --}}
+                        <div class="mb-4">
+                            <label class="block mb-2 font-semibold text-gray-700">যে নাম্বার থেকে টাকা পাঠানো হয়েছে<span
+                                    class="text-red-500"> *</span></label>
+                            <input type="text" name="sent_from" class="form-input" value="{{ old('sent_from') }}">
+                            @error('sent_from')
+                                <span class="text-sm text-red-500">{{ 'যে নাম্বার থেকে টাকা পাঠানো হয়েছে লিখুন' }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <div>
+                                <label class="block mb-2 font-semibold text-gray-700">টাকা পাঠানোর প্রমাণ(স্ক্রীনশট)
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="file" name="screenshot" class="form-input">
+                                @error('screenshot')
+                                    <span class="text-sm text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
                         <!-- Terms Agreement -->
-                        <div class="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+                        <div class="flex items-start p-4 space-x-3 rounded-lg bg-gray-50">
                             <input type="checkbox" id="terms" name="terms_agreed"
                                 class="w-5 h-5 mt-1 text-blue-600">
-                            <label for="terms" class="text-gray-700 leading-relaxed cursor-pointer">
+                            <label for="terms" class="leading-relaxed text-gray-700 cursor-pointer">
                                 আমি <span class="text-red-500">*</span>
                                 <strong>
-                                    <span class="underline text-blue-600 cursor-pointer"
+                                    <span class="text-blue-600 underline cursor-pointer"
                                         onclick="event.stopPropagation(); openRulesModal();">
                                         পুনর্মিলনী নিয়মাবলী
                                     </span>
                                 </strong>
-                                পড়েছি এবং সম্মত হয়েছি। আমি নিশ্চিত করছি যে প্রদত্ত সকল তথ্য সঠিক এবং সত্য।
+                                পড়েছি এবং সম্মত হয়েছি।
                             </label>
                         </div>
                         @error('terms_agreed')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                            <span class="text-sm text-red-500">{{ 'শর্তাবলীতে সম্মতি প্রদান করা বাধ্যতামূলক' }}</span>
                         @enderror
 
                         <button type="submit"
-                            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <i class="fas fa-check-circle mr-2"></i>
+                            class="w-full py-4 text-lg font-bold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl hover:scale-105 hover:shadow-xl">
+                            <i class="mr-2 fas fa-check-circle"></i>
                             নিবন্ধন সম্পন্ন করুন
                         </button>
                     </form>
                 </div>
 
                 <!-- Payment Info -->
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div class="p-6 bg-blue-50 rounded-xl border border-blue-200 shadow-lg flex justify-center items-center flex-col cursor-pointer group"
+                <div class="grid gap-6 mt-6 md:grid-cols-2">
+                    <div class="flex flex-col items-center justify-center p-6 border border-blue-200 shadow-lg cursor-pointer bg-blue-50 rounded-xl group"
                         onclick="copyToClipboard('01610333033')">
-                        <p class="text-blue-800 text-3xl">
+                        <p class="text-3xl text-blue-800">
                             • বিকাশ নম্বর:
                             <br>
                             <strong id="bkash-number" class="text-3xl font-extrabold group-hover:text-blue-900">
                                 01610333033
                             </strong>
                         </p>
-                        <span id="copy-status" class="text-sm text-green-600 hidden mt-3">✅ কপি হয়েছে!</span>
+                        <span id="copy-status" class="hidden mt-3 text-sm text-green-600">✅ কপি হয়েছে!</span>
                     </div>
 
-                    {{-- <div class="p-6 bg-blue-50 rounded-xl border border-blue-200 shadow-lg text-center">
-                        <h4 class="text-xl font-bold text-blue-900 mb-4 flex items-center justify-center">
+                    {{-- <div class="p-6 text-center border border-blue-200 shadow-lg bg-blue-50 rounded-xl">
+                        <h4 class="flex items-center justify-center mb-4 text-xl font-bold text-blue-900">
                             স্ক্যান করুন
                         </h4>
                         <img src="{{ asset('assets/images/qr-code.png') }}" alt="QR Code"
-                            class="w-32 h-32 object-cover mx-auto rounded-lg border border-blue-300">
+                            class="object-cover w-32 h-32 mx-auto border border-blue-300 rounded-lg">
                     </div> --}}
                 </div>
             </div>
@@ -414,29 +419,29 @@
 
         <!-- Alumni Directory Section -->
         {{-- <section id="alumni" class="py-16 bg-gradient-to-br from-white to-gray-50">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">
+            <div class="px-6 mx-auto max-w-7xl">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">
                         প্রাক্তন ছাত্র-ছাত্রীদের তালিকা
                     </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
                 </div>
 
                 <!-- Search Filters -->
-                <form method="GET" action="{{ route('alumni.index') }}" class="grid md:grid-cols-2 gap-6 mb-8">
+                <form method="GET" action="{{ route('alumni.index') }}" class="grid gap-6 mb-8 md:grid-cols-2">
                     <div>
-                        <label class="block text-gray-700 font-semibold mb-2 flex items-center">
-                            <i class="fas fa-search text-blue-600 mr-2"></i> নাম দিয়ে খুঁজুন
+                        <label class="flex items-center block mb-2 font-semibold text-gray-700">
+                            <i class="mr-2 text-blue-600 fas fa-search"></i> নাম দিয়ে খুঁজুন
                         </label>
-                        <input type="text" name="name" value="{{ request('name') }}" class="form-input w-full"
+                        <input type="text" name="name" value="{{ request('name') }}" class="w-full form-input"
                             placeholder="যেমন: মোহাম্মদ আব্দুল করিম">
                     </div>
 
                     <div>
-                        <label class="block text-gray-700 font-semibold mb-2 flex items-center">
-                            <i class="fas fa-graduation-cap text-green-600 mr-2"></i> ব্যাচ/সাল
+                        <label class="flex items-center block mb-2 font-semibold text-gray-700">
+                            <i class="mr-2 text-green-600 fas fa-graduation-cap"></i> ব্যাচ/সাল
                         </label>
-                        <select name="batch" class="form-input w-full" onchange="this.form.submit()">
+                        <select name="batch" class="w-full form-input" onchange="this.form.submit()">
                             <option value="">বছর নির্বাচন করুন</option>
                             @for ($year = 2025; $year >= 1964; $year--)
                                 <option value="{{ $year }}" {{ request('batch') == $year ? 'selected' : '' }}>
@@ -447,10 +452,10 @@
                 </form>
 
                 <!-- Button -->
-                <div class="text-center mt-12">
+                <div class="mt-12 text-center">
                     <a href="{{ route('alumni.all') }}"
-                        class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                        <i class="fas fa-plus-circle mr-2"></i>
+                        class="px-10 py-4 font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl hover:shadow-xl hover:scale-105 hover:-translate-y-1">
+                        <i class="mr-2 fas fa-plus-circle"></i>
                         আরো দেখুন
                     </a>
                 </div>
@@ -459,38 +464,38 @@
 
         <!-- Financial Summary Section -->
         <section id="financial" class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">আর্থিক অবস্থা</h2>
+            <div class="max-w-6xl px-6 mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">আর্থিক অবস্থা</h2>
                     <p class="text-xl text-gray-600">পুনর্মিলনী আয়োজনের আর্থিক হিসাব ও তথ্য</p>
                 </div>
 
                 <!-- Summary Cards -->
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-green-50 p-8 rounded-2xl text-center border border-green-200">
-                        <div class="text-sm text-green-600 mb-2">মোট আয়</div>
-                        <div class="text-4xl font-bold text-green-600 mb-2">{{ $totalIncome }}</div>
+                <div class="grid gap-8 mb-12 md:grid-cols-3">
+                    <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
+                        <div class="mb-2 text-sm text-green-600">মোট আয়</div>
+                        <div class="mb-2 text-4xl font-bold text-green-600">{{ 0 }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
 
-                    <div class="bg-red-50 p-8 rounded-2xl text-center border border-red-200">
-                        <div class="text-sm text-red-600 mb-2">মোট ব্যয়</div>
-                        <div class="text-4xl font-bold text-red-600 mb-2">0</div>
+                    <div class="p-8 text-center border border-red-200 bg-red-50 rounded-2xl">
+                        <div class="mb-2 text-sm text-red-600">মোট ব্যয়</div>
+                        <div class="mb-2 text-4xl font-bold text-red-600">0</div>
                         <div class="text-sm text-red-600">টাকা</div>
                     </div>
 
-                    <div class="bg-blue-50 p-8 rounded-2xl text-center border border-blue-200">
-                        <div class="text-sm text-blue-600 mb-2">উদ্বৃত্ত</div>
-                        <div class="text-4xl font-bold text-blue-600 mb-2">0</div>
+                    <div class="p-8 text-center border border-blue-200 bg-blue-50 rounded-2xl">
+                        <div class="mb-2 text-sm text-blue-600">উদ্বৃত্ত</div>
+                        <div class="mb-2 text-4xl font-bold text-blue-600">0</div>
                         <div class="text-sm text-blue-600">টাকা</div>
                     </div>
                 </div>
 
                 <!-- Toggle Button -->
-                <div class="text-center mb-8">
+                <div class="mb-8 text-center">
                     <a href="{{ route('account.index') }}"
-                        class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-chart-bar mr-2"></i>
+                        class="px-8 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
+                        <i class="mr-2 fas fa-chart-bar"></i>
                         বিস্তারিত দেখুন
                     </a>
                 </div>
@@ -499,72 +504,72 @@
 
         <!-- News Section -->
         <section id="news" class="py-16 bg-gradient-to-br from-white to-gray-50">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">সর্বশেষ খবর</h2>
+            <div class="px-6 mx-auto max-w-7xl">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">সর্বশেষ খবর</h2>
                     <p class="text-xl text-gray-600">পুনর্মিলনী সংক্রান্ত সকল গুরুত্বপূর্ণ তথ্য এবং আপডেট</p>
-                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto mt-4 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-green-500"></div>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
+                <div class="grid gap-8 md:grid-cols-3">
                     @foreach ($news as $item)
-                        <div class="news-card group relative overflow-hidden">
+                        <div class="relative overflow-hidden news-card group">
                             <div class="absolute top-0 left-0 w-full h-1"
                                 style="background: linear-gradient(to right, #3b82f6, #22d3ee)"></div>
 
-                            <div class="flex items-start space-x-3 mb-6">
-                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300"
+                            {{-- <div class="flex items-start mb-6 space-x-3">
+                                <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 shadow-lg rounded-xl group-hover:scale-110"
                                     style="background: linear-gradient(to bottom right, #3b82f6, #22d3ee)">
-                                    <img src="{{ asset($item->image) }}" alt="news image"
-                                        class="w-10 h-10 object-cover rounded-xl" />
+                                     <img src="{{ asset($item->image) }}" alt="news image"
+                                        class="object-cover w-10 h-10 rounded-xl" />
                                 </div>
                                 <div class="flex-1">
-                                    <span
-                                        class="inline-block bg-blue-100 text-blue-700 font-semibold text-xs px-3 py-1 rounded-full mb-1">
+                                     <span
+                                        class="inline-block px-3 py-1 mb-1 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full">
                                         {{ $item->category }}
                                     </span>
-                                    <div class="text-gray-500 text-sm flex items-center">
-                                        <i class="fas fa-clock mr-1"></i>
+                                     <div class="flex items-center text-sm text-gray-500">
+                                        <i class="mr-1 fas fa-clock"></i>
                                         {{ $item->created_at->diffForHumans() }}
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <h3
-                                class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                                class="mb-4 text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                                 {{ $item->title }}
                             </h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            <p class="mb-6 text-sm leading-relaxed text-gray-600">
                                 {{ Str::limit($item->description, 100) }}</p>
 
                             <div class="flex items-center justify-between">
-                                <a href="{{ route('news.show', $item->id) }}"
-                                    class="inline-flex items-center text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors group-hover:translate-x-2 transition-transform duration-300">
+                                {{-- <a href="{{ route('news.show', $item->id) }}"
+                                    class="inline-flex items-center text-sm font-semibold text-blue-600 transition-colors transition-transform duration-300 hover:text-blue-700 group-hover:translate-x-2">
                                     বিস্তারিত পড়ুন
                                     <i
-                                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-                                </a>
-                                <div class="flex items-center space-x-2 text-gray-400">
+                                        class="ml-2 transition-transform duration-300 fas fa-arrow-right group-hover:translate-x-1"></i>
+                                </a> --}}
+                                {{-- <div class="flex items-center space-x-2 text-gray-400">
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('news.show', $item->id)) }}&amp;t={{ urlencode($item->title) }}"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="hover:text-blue-600 transition-colors" title="Share on Facebook">
+                                        class="transition-colors hover:text-blue-600" title="Share on Facebook">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                     <a href="https://wa.me/?text={{ urlencode($item->title . ' ' . route('news.show', $item->id)) }}"
                                         target="_blank" rel="noopener noreferrer"
-                                        class="hover:text-green-500 transition-colors" title="Share on WhatsApp">
+                                        class="transition-colors hover:text-green-500" title="Share on WhatsApp">
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     @endforeach
                 </div>
 
-                <div class="text-center mt-12">
+                <div class="mt-12 text-center">
                     <a href="{{ route('news.index') }}"
-                        class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                        <i class="fas fa-newspaper mr-2"></i> সব খবর দেখুন
+                        class="px-10 py-4 font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl hover:shadow-xl hover:scale-105 hover:-translate-y-1">
+                        <i class="mr-2 fas fa-newspaper"></i> সব খবর দেখুন
                     </a>
                 </div>
             </div>
@@ -572,9 +577,9 @@
 
         <!-- Events Schedule Section -->
         <section id="events" class="py-16 bg-purple-50">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">কার্যক্রমের সময়সূচী</h2>
+            <div class="max-w-6xl px-6 mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">কার্যক্রমের সময়সূচী</h2>
                     <p class="text-xl text-gray-600">পুনর্মিলনী দিনের প্রতিটি মুহূর্তের বিস্তারিত তথ্য</p>
                 </div>
 
@@ -583,8 +588,8 @@
                     @include('partials.timeline')
                 </div>
 
-                <div class="text-center mt-12">
-                    <p class="text-gray-600 italic">সময়সূচি প্রয়োজন অনুযায়ী পরিবর্তনযোগ্য।প্রতিটি পর্বের সঞ্চালনার
+                <div class="mt-12 text-center">
+                    <p class="italic text-gray-600">সময়সূচি প্রয়োজন অনুযায়ী পরিবর্তনযোগ্য।প্রতিটি পর্বের সঞ্চালনার
                         দায়িত্ব নির্ধারিত থাকবে আগেই।সাউন্ড, আলোকসজ্জা ও নিরাপত্তা ব্যবস্থা বিকেলের আগে সম্পন্ন করতে হবে।
                     </p>
                 </div>
@@ -593,22 +598,22 @@
 
         <!-- Sponsors Section -->
         {{-- <section class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">অনুষ্ঠানের স্পনসর</h2>
+            <div class="max-w-6xl px-6 mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">অনুষ্ঠানের স্পনসর</h2>
                     <p class="text-xl text-gray-600">
                         আমাদের পুনর্মিলনীতে যারা স্পনসর হিসেবে যুক্ত হয়েছে, সেইসব প্রতিষ্ঠানকে আন্তরিক ধন্যবাদ
                     </p>
-                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+                    <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                 </div>
-                <div class="swiper mySwiper mt-12">
+                <div class="mt-12 swiper mySwiper">
                     <div class="swiper-wrapper" style="height:120px;">
                         @foreach ($sponsors as $sponsor)
-                            <div class="swiper-slide flex justify-center">
-                                <div class="text-center p-6 bg-white rounded-lg">
+                            <div class="flex justify-center swiper-slide">
+                                <div class="p-6 text-center bg-white rounded-lg">
                                     <img src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }}"
-                                        class="w-48 h-12 object-contain">
-                                    <h3 class="font-bold text-gray-900 mt-2 text-lg">{{ $sponsor->name }}</h3>
+                                        class="object-contain w-48 h-12">
+                                    <h3 class="mt-2 text-lg font-bold text-gray-900">{{ $sponsor->name }}</h3>
                                 </div>
                             </div>
                         @endforeach
@@ -618,81 +623,81 @@
         </section> --}}
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-gradient-to-br from-purple-900 to-blue-900 text-white">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">যোগাযোগ করুন</h2>
+        <section id="contact" class="py-16 text-white bg-gradient-to-br from-purple-900 to-blue-900">
+            <div class="max-w-6xl px-6 mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold md:text-5xl">যোগাযোগ করুন</h2>
                     <p class="text-xl text-purple-100">প্রয়োজনে আমাদের সাথে যোগাযোগ করুন এবং দ্রুত সহায়তা পান</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12">
+                <div class="grid gap-12 md:grid-cols-2">
                     <!-- Contact Info -->
                     <div class="space-y-8">
-                        <div class="contact-card bg-white/10 backdrop-blur-lg border border-white/20">
+                        <div class="border contact-card bg-white/10 backdrop-blur-lg border-white/20">
                             <div class="contact-icon bg-gradient-to-br from-blue-500 to-purple-600">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2"> যোগাযোগ</h3>
+                            <h3 class="mb-2 text-xl font-bold text-white"> যোগাযোগ</h3>
                             <p class="text-purple-100">01610333033, 01746893933</p>
                         </div>
 
-                        <div class="contact-card bg-white/10 backdrop-blur-lg border border-white/20">
+                        <div class="border contact-card bg-white/10 backdrop-blur-lg border-white/20">
                             <div class="contact-icon bg-gradient-to-br from-green-500 to-teal-600">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">ইমেইল ঠিকানা</h3>
+                            <h3 class="mb-2 text-xl font-bold text-white">ইমেইল ঠিকানা</h3>
                             <p class="text-purple-100">reunion.gsahs@gmail.com</p>
                         </div>
 
-                        <div class="contact-card bg-white/10 backdrop-blur-lg border border-white/20">
+                        <div class="border contact-card bg-white/10 backdrop-blur-lg border-white/20">
                             <div class="contact-icon bg-gradient-to-br from-orange-500 to-red-600">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">বিদ্যালয়ের ঠিকানা</h3>
+                            <h3 class="mb-2 text-xl font-bold text-white">বিদ্যালয়ের ঠিকানা</h3>
                             <p class="text-purple-100">গোটিয়া, মেছরা, সিরাজগঞ্জ, বাংলাদেশ</p>
                         </div>
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold text-white mb-6">বার্তা পাঠান</h3>
+                    <div class="p-8 border bg-white/10 backdrop-blur-lg border-white/20 rounded-2xl">
+                        <h3 class="mb-6 text-2xl font-bold text-white">বার্তা পাঠান</h3>
                         <form method="POST" action="{{ route('contact.send') }}" class="space-y-6">
                             @csrf
                             <div>
                                 <input name="contact_name" type="text"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-purple-200"
+                                    class="w-full px-4 py-3 text-white placeholder-purple-200 border rounded-lg bg-white/20 border-white/30"
                                     placeholder="আপনার নাম" value="{{ old('contact_name') }}">
                                 @error('contact_name')
-                                    <span class="text-red-300 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-300">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <input name="contact_email" type="email"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-purple-200"
+                                    class="w-full px-4 py-3 text-white placeholder-purple-200 border rounded-lg bg-white/20 border-white/30"
                                     placeholder="ইমেইল ঠিকানা" value="{{ old('contact_email') }}">
                                 @error('contact_email')
-                                    <span class="text-red-300 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-300">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <input name="contact_phone" type="tel"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-purple-200"
+                                    class="w-full px-4 py-3 text-white placeholder-purple-200 border rounded-lg bg-white/20 border-white/30"
                                     placeholder="মোবাইল নম্বর" value="{{ old('contact_phone') }}">
                                 @error('contact_phone')
-                                    <span class="text-red-300 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-300">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <textarea name="contact_message"
-                                    class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-purple-200 h-32"
+                                    class="w-full h-32 px-4 py-3 text-white placeholder-purple-200 border rounded-lg bg-white/20 border-white/30"
                                     placeholder="আপনার বার্তা লিখুন">{{ old('contact_message') }}</textarea>
                                 @error('contact_message')
-                                    <span class="text-red-300 text-sm">{{ $message }}</span>
+                                    <span class="text-sm text-red-300">{{ $message }}</span>
                                 @enderror
                             </div>
                             <button type="submit"
-                                class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-3 rounded-lg font-bold transition-all duration-300">
-                                <i class="fas fa-paper-plane mr-2"></i>
+                                class="w-full py-3 font-bold text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+                                <i class="mr-2 fas fa-paper-plane"></i>
                                 বার্তা পাঠান
                             </button>
                         </form>
@@ -881,5 +886,14 @@
                 }
             };
         });
+    </script>
+    <script>
+        setTimeout(() => {
+            const alert = document.querySelector('[data-flash]');
+            if (alert) {
+                alert.classList.add('opacity-0', 'translate-y-[-10px]');
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 4000);
     </script>
 @endpush

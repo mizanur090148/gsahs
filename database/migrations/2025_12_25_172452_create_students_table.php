@@ -15,17 +15,19 @@ return new class extends Migration
             $table->string('father_name');
             $table->string('blood')->nullable();
             $table->string('photo')->nullable();
+            $table->string('screenshot')->nullable();
             $table->string('tshirt')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('profession')->nullable();
-            $table->text('present_address')->nullable();
-            $table->text('permanent_address')->nullable();
+            $table->string('present_address')->nullable();
+            $table->string('permanent_address')->nullable();
             $table->enum('registration_type', ['single', 'group']);
             $table->integer('participant_count')->nullable();
+            $table->string('sent_from', 30);
             $table->decimal('amount', 10, 2);
             $table->string('ref_code')->nullable();
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->enum('status', ['pending', 'active', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }

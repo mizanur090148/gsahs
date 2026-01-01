@@ -1,58 +1,42 @@
 <!-- Terms and Conditions Modal -->
-<div id="rulesModal" class="fixed inset-0 z-50 hidden opacity-0 scale-95 transition-all duration-300 bg-black bg-opacity-50 flex items-center justify-center p-4">
+<div id="rulesModal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-all duration-300 scale-95 bg-black bg-opacity-50 opacity-0">
     <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <!-- Modal Header -->
-        <div class="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
-            <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-bold text-gray-900 flex items-center">
-                    <i class="fas fa-book text-blue-600 mr-3"></i>
-                    রিইউনিয়ন রেজিস্ট্রেশন সংক্রান্ত নিয়মাবলি
+        <div class="sticky top-0 p-6 bg-white border-b border-gray-200 rounded-t-2xl">
+            <div class="flex items-center justify-between">
+                <h2 class="flex items-center text-2xl font-bold text-gray-900">
+                    <i class="mr-3 text-blue-600 fas fa-book"></i>
+                    রেজিষ্ট্রেশনের শর্তাবলি
                 </h2>
-                <button onclick="closeRulesModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                <button onclick="closeRulesModal()" class="text-2xl text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
         </div>
         <!-- Modal Content -->
         <div class="p-6 space-y-6">
-            <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                <ol class="list-decimal list-inside space-y-3 text-gray-700 leading-relaxed" style="list-style: decimal">
-                    <li>রেজিস্ট্রেশন প্রক্রিয়া- নির্ধারিত অনলাইন/অফলাইন ফরম পূরণ করতে হবে।</li>
-                    <li>পূরণকৃত ফরমে নাম, ব্যাচ/পাসের সাল, মোবাইল নম্বর, টি-শার্ট সাইজ (যদি থাকে) ইত্যাদি তথ্য উল্লেখ করতে হবে।</li>
-                    <li>এসএসসি ২০২৫ এর আগে অত্র বিদ্যালয়ে যে একদিন পড়েছেন উনাকে সাবেক শিক্ষার্থী হিসেবে গণ্য করা হবে, উক্ত ব্যক্তিগণ রেজিস্ট্রেশন করে রিইউনিয়নে অংশগ্রহণ করতে পারবেন। সাবেক শিক্ষার্থী ব্যতিত কোন ছাত্র ছাত্রী রিইউনিয়নে রেজিষ্ট্রেশন করতে পারবে না।</li>
-                    <li>রেজিস্ট্রেশন ফি- প্রত্যেক শিক্ষার্থী এবং পরিবারের সদস্যদের জন্য নির্ধারিত রেজিস্ট্রেশন ফি প্রদান করতে হবে।</li>
-                    <li>রেজিস্ট্রেশন ফি শুধুমাত্র অফিসিয়াল বিকাশ অ্যাকাউন্টে গ্রহণযোগ্য।</li>
-                    <li>পেমেন্ট সম্পন্ন হলে ট্রান্সেকশন আইডি/ আইডি নম্বর সংরক্ষণ করতে হবে।</li>
-                    <li>সময়সীমা- রেজিস্ট্রেশন শুরু ও শেষ হওয়ার নির্দিষ্ট তারিখের মধ্যেই রেজিস্ট্রেশন করতে হবে।</li>
+            <div class="p-8 border border-blue-200 bg-blue-50 rounded-xl">
+                <ol class="space-y-3 text-gray-700 list-decimal list-inside p-leading-relaxed" style="list-style: decimal">
+                    <li>রেজিষ্ট্রেশন ফি ১০০০/-</li>
+                    <li>রেজিষ্ট্রেশন করার আগে ফি প্রদাণ করতে হবে। (রেজিষ্ট্রেশন ফি খরচসহ পাঠাতে হবে)।</li>
+                    <li>রেজিষ্ট্রেশন করার জন্য প্রত্যেকে আলাদা আলাদা মোবাইল নাম্বার ব্যাবহার করবেন। একই মোবাইল নাম্বার ব্যবহার করে দুইজন রেজিষ্ট্রেশন করবেন না।</li>
+                    <li> অংশগ্রহণকারী সাথে গেষ্ট নিয়ে আসতে পারবে।</li>
+                    <li>গেষ্টের জন্য ১০০০/- টাকা ফি প্রদাণ করতে হবে। গেষ্ট ১০ বছরের কম বয়সী হলে ফি ৫০০/-</li>
+                    <li>অংশগ্রহণকারী নিজ এবং গেষ্টের ফি একসাথে পেমেন্ট করবে।</li>
+                    <li>রেজিষ্ট্রেশনের শেষ তারিখ ৩০শে মার্চ’২০২৬।</li>
                     <li>নির্ধারিত সময়সীমার পর কোনো রেজিস্ট্রেশন গ্রহণ করা হবে না।</li>
-                    <li>আইডি / কনফার্মেশন- সফলভাবে রেজিস্ট্রেশন সম্পন্ন হলে প্রত্যেক অংশগ্রহণকারীকে একটি কনফার্মেশন আইডি প্রদান করা হবে।</li>
-                    <li>শুধুমাত্র কনফার্মেশন প্রাপ্ত রেজিস্ট্রেশনকারীরাই রিইউনিয়ন অনুষ্ঠানে অংশগ্রহণ করতে পারবেন।</li>
-                    <li>অতিথি নীতি- অতিথি আনার অনুমতি রিইউনিয়ন আয়োজক কমিটি কর্তৃক নির্ধারিত হবে।</li>
-                    <li>ফেরত নীতি (Refund Policy)- প্রদত্ত রেজিস্ট্রেশন ফি ফেরতযোগ্য নয়।</li>
-                    <li>আচরণবিধি- অনুষ্ঠান চলাকালীন সবাইকে ভ্রাতৃত্বপূর্ণ ও সৌহার্দ্যপূর্ণ পরিবেশ বজায় রাখতে হবে।</li>
-                    <li>রেজিস্ট্রেশন ছাড়া কেউ অনুষ্ঠানে প্রবেশ করতে পারবেন না।</li>
-                    <li>রিইউনিয়ন সংক্রান্ত যে কোন সিদ্ধান্ত আয়োজক কমিটি গ্রহণ করবেন।</li>
-                    <li>প্রবাসী শিক্ষার্থীদের প্রতি বিশেষ অনুরোধ- যদি কোনো কারণে আপনি মূল অনুষ্ঠানে উপস্থিত থাকতে না পারেন, অনুগ্রহ করে রেজিস্ট্রেশন ফরমে আপনার প্রতিনিধির নাম ও মোবাইল নম্বর সঠিকভাবে উল্লেখ করুন। এতে আপনার অনুপস্থিতিতে আপনার প্রতিনিধি আপনার গিফটসহ অন্যান্য গুরুত্বপূর্ণ জিনিস গ্রহণ করতে পারবে।</li>
-                    <li>রেজিস্ট্রেশন ফি- প্রত্যেক প্রাক্তন শিক্ষার্থী: ১০০০ টাকা এবং পরিবারের সদস্য: ৫০০ টাকা, রেজিস্ট্রেশন ফি প্রদান করতে হবে এবং সাথে বিকাশ চার্জ রেজিস্ট্রেশন ফির সাথে যোগ হবে।</li>
                     <li>কেউ অনলাইনে রেজিস্ট্রেশন করতে না পারলে অফলাইনে রেজিস্ট্রেশনের জন্য নিচের মোবাইল নম্বরে যোগাযোগ করুন।(01610333033, 01746893933)</li>
-
-                    <b>বাচ্চাদের প্রবেশ ও খাবারের নিয়ম:</b>
-                    <ol class="list-decimal ml-6 mt-2 space-y-1">
-                        <li>একজন রেজিষ্ট্রেশনকারী সর্বাধিক দুই জন ও ৭ বছরের বেশি নয় এমন বাচ্চা নিয়ে রিইউনিয়নে অংশগ্রহণ করতে পারবেন।</li>
-                        <li>উক্ত বাচ্চাদের জন্য খাবারের ব্যবস্থা আয়োজক কমিটি প্রদান করিবে না।</li>
-                        <li>তবে যে কোনো বয়সের বাচ্চা যদি পরিবারের সদস্য হিসেবে রেজিস্ট্রেশনে যুক্ত থাকে, তাদের খাবারের ব্যবস্থা আয়োজক কমিটি করবে।</li>
-                    </ol>
                 </ol>
             </div>
         </div>
         <!-- Modal Footer -->
-        <div class="sticky bottom-0 bg-white border-t border-gray-200 p-6 rounded-b-2xl">
-            <div class="flex justify-between items-center">
+        <div class="sticky bottom-0 p-6 bg-white border-t border-gray-200 rounded-b-2xl">
+            <div class="flex items-center justify-between">
                 <p class="text-sm text-gray-600">
-                    <i class="fas fa-info-circle mr-1"></i>
+                    <i class="mr-1 fas fa-info-circle"></i>
                     এই নিয়মাবলী সকল অংশগ্রহণকারীর জন্য বাধ্যতামূলক
                 </p>
-                <button onclick="closeRulesModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <button onclick="closeRulesModal()" class="px-6 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
                     বুঝেছি
                 </button>
             </div>

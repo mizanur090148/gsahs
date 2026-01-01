@@ -13,8 +13,8 @@ class HomeController extends Controller
         $news = [
             (object)[
                 'id' => 1,
-                'title' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ ডিসেম্বর ২০২৫ইং সন্ধ্য ৬টা পর্যন্ত',
-                'description' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ ডিসেম্বর ২০২৫ইং সন্ধ্য ৬টা পর্যন্ত',
+                'title' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ মার্চ ২০২৬ ইংরেজী পর্যন্ত',
+                'description' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ মার্চ ২০২৬ ইংরেজী পর্যন্ত',
                 'image' => 'photos/1766501816_Screenshot_1.png',
                 'category' => 'গুরুত্বপূর্ণ',
                 'created_at' => now()->subDay(),
@@ -54,7 +54,7 @@ class HomeController extends Controller
         ];
 
         $studentCount = Student::count();
-        $relativesCount = Student::count();
+        $relativesCount = Student::sum('participant_count') - $studentCount;
         $totalIncome = Student::sum('amount');
 
         return view('home', compact('news', 'sponsors', 'studentCount', 'relativesCount', 'totalIncome'));

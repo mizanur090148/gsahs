@@ -15,6 +15,7 @@ class Student extends Model
         'father_name',
         'blood',
         'photo',
+        'screenshot',
         'tshirt',
         'phone',
         'email',
@@ -24,6 +25,7 @@ class Student extends Model
         'registration_type',
         'participant_count',
         'amount',
+        'sent_from',
         'status',
         'ref_code',
     ];

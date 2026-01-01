@@ -9,7 +9,7 @@ class RegisteredController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Student::where('status', 'approved');
+        $query = Student::query();//where('status', 'approved');
 
         if ($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->name . '%');
@@ -28,7 +28,7 @@ class RegisteredController extends Controller
         // }
 
         $studentCount = Student::count();
-        $relativesCount = Student::count();
+        $relativesCount = Student::sum('participant_count') - $studentCount;
         $totalIncome = Student::sum('amount');
 
         return view('registered-std', compact('alumni', 'studentCount', 'relativesCount', 'totalIncome'));
@@ -36,7 +36,7 @@ class RegisteredController extends Controller
 
     public function all(Request $request)
     {
-        $query = Student::where('status', 'approved');
+        $query = Student::query();//where('status', 'approved');
 
         if ($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->name . '%');

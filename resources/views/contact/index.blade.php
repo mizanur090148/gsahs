@@ -29,13 +29,13 @@
                     <p class="text-purple-100">reunion.gsahs@gmail.com</p>
                 </div>
 
-                <div class="contact-card bg-white/10 backdrop-blur-lg border border-white/20">
+                {{-- <div class="contact-card bg-white/10 backdrop-blur-lg border border-white/20">
                     <div class="contact-icon bg-gradient-to-br from-orange-500 to-red-600">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">বিদ্যালয়ের ঠিকানা</h3>
                     <p class="text-purple-100">ছাতারপাইয়া, সেনবাগ, নোয়াখালী, বাংলাদেশ</p>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Contact Form -->
