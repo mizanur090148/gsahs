@@ -19,16 +19,16 @@
                 @if (session('success'))
                     <div class="fixed z-50 top-6 right-6" data-flash>
                         <div
-                            class="flex items-center px-6 py-4 text-green-800 bg-green-100 border border-green-300 shadow-lg rounded-xl transition-all duration-500">
-                            <i class="mr-3 text-2xl fas fa-check-circle text-green-600"></i>
+                            class="flex items-center px-6 py-4 text-green-800 transition-all duration-500 bg-green-100 border border-green-300 shadow-lg rounded-xl">
+                            <i class="mr-3 text-2xl text-green-600 fas fa-check-circle"></i>
                             <span class="font-semibold">
                                 {{ session('success') }}
                             </span>
                         </div>
                     </div>
                 @endif
-                <div class="max-w-6xl mx-auto px-3">
-                    <h1 class="text-6xl md:text-7xl lg:text-7xl font-black mb-5 leading-none text-white">
+                <div class="max-w-6xl px-3 mx-auto">
+                    <h1 class="mb-5 text-6xl font-black leading-none text-white md:text-7xl lg:text-7xl">
                         স্বাগতম গ্র্যান্ড পুনর্মিলনী - ২০২৬
                     </h1>
                     <h3 class="mb-8 text-4xl font-black leading-none text-white md:text-4xl lg:text-4xl">
@@ -41,10 +41,10 @@
                             <i class="mr-3 fas fa-user-plus"></i>
                             নিবন্ধন করুন
                         </a>
-                        <a href="#news"
-                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:scale-105 hover:bg-white hover:text-gray-900">
+                        <a onclick="event.stopPropagation(); openRulesModal();"
+                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full cursor-pointer hover:scale-105 hover:bg-white hover:text-gray-900">
                             <i class="mr-3 fas fa-bullhorn"></i>
-                            সর্বশেষ ঘোষণা
+                            নিবন্ধনের নিয়মাবলি
                         </a>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                             <i
                                 class="text-3xl text-white transition-transform duration-300 fas fa-clock group-hover:rotate-12"></i>
                         </div>
-                        <div class="mb-3 text-5xl font-black text-red-600 counter" data-target="87.790978037882">0</div>
+                        <div class="mb-3 text-5xl font-black text-red-600 counter" data-target="{{ $daysRemaining }}">0</div>
                         <div class="text-lg font-semibold text-gray-700">দিন বাকি</div>
                         <div class="w-full h-2 mt-3 overflow-hidden bg-red-100 rounded-full">
                             <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-red-500 to-pink-600"
@@ -275,9 +275,9 @@
                                 <label class="block mb-2 font-semibold text-gray-700">গেঞ্জির সাইজ <span
                                         class="text-red-500">*</span></label>
                                 <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
-                                    @foreach (['S', 'M', 'L', 'XL', 'XXL'] as $size)
+                                    @foreach (['M', 'L', 'XL', 'XXL'] as $size)
                                         <label
-                                            class="flex items-center justify-center p-3 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
+                                            class="flex items-center justify-center p-1 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                             <input type="radio" name="tshirt" value="{{ $size }}"
                                                 class="sr-only" {{ old('tshirt') == $size ? 'checked' : '' }}>
                                             <span class="font-semibold">👕 {{ $size }}</span>
@@ -344,16 +344,34 @@
                             </div>
                         </div>
 
-                        <div class="mb-4">
-                            <label class="block mb-2 font-semibold text-gray-700">যে নাম্বার থেকে টাকা পাঠানো হয়েছে<span
-                                    class="text-red-500"> *</span></label>
-                            <input type="text" name="sent_from" class="form-input" value="{{ old('sent_from') }}">
-                            @error('sent_from')
-                                <span class="text-sm text-red-500">{{ 'যে নাম্বার থেকে টাকা পাঠানো হয়েছে লিখুন' }}</span>
+                        <div class="mb-6">
+                            <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মোড <span
+                                    class="text-red-500">*</span></label>
+                            <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
+                                @foreach (['বিকাশ' => 'bkash', 'নগদ' => 'nogod', 'রকেট' => 'rocket', 'ট্যাপ' => 'tap'] as $key => $size)
+                                    <label
+                                        class="flex items-center justify-center p-1 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
+                                        <input type="radio" name="payment_mode" value="{{ $size }}"
+                                            class="sr-only" {{ old('payment_mode') == $size ? 'checked' : '' }}>
+                                        <span class="font-semibold">👕 {{ $key }}</span>
+                                    </label>
+                                @endforeach
+                            </div>
+                            @error('payment_mode')
+                                <span class="text-sm text-red-500">{{ 'পেমেন্ট মোড সিলেক্ট করুন' }}</span>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-6">
+                            <label class="block mb-2 font-semibold text-gray-700">যে নাম্বারে টাকা পাঠানো হয়েছে<span
+                                    class="text-red-500"> *</span></label>
+                            <input type="text" name="sent_to" class="form-input" value="{{ old('sent_to') }}">
+                            @error('sent_to')
+                                <span class="text-sm text-red-500">{{ 'যে নাম্বার নাম্বারে টাকা পাঠানো হয়েছে লিখুন' }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-6">
                             <div>
                                 <label class="block mb-2 font-semibold text-gray-700">টাকা পাঠানোর প্রমাণ(স্ক্রীনশট)
                                     <span class="text-red-500">*</span>
@@ -363,6 +381,15 @@
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block mb-2 font-semibold text-gray-700">যে নাম্বার থেকে টাকা পাঠানো হয়েছে<span
+                                    class="text-red-500"> *</span></label>
+                            <input type="text" name="sent_from" class="form-input" value="{{ old('sent_from') }}">
+                            @error('sent_from')
+                                <span class="text-sm text-red-500">{{ 'যে নাম্বার থেকে টাকা পাঠানো হয়েছে লিখুন' }}</span>
+                            @enderror
                         </div>
 
                         <!-- Terms Agreement -->
@@ -493,7 +520,7 @@
 
                 <!-- Toggle Button -->
                 <div class="mb-8 text-center">
-                    <a href="{{ route('account.index') }}"
+                    <a href="#"
                         class="px-8 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
                         <i class="mr-2 fas fa-chart-bar"></i>
                         বিস্তারিত দেখুন
@@ -567,7 +594,7 @@
                 </div>
 
                 <div class="mt-12 text-center">
-                    <a href="{{ route('news.index') }}"
+                    <a href="#"
                         class="px-10 py-4 font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl hover:shadow-xl hover:scale-105 hover:-translate-y-1">
                         <i class="mr-2 fas fa-newspaper"></i> সব খবর দেখুন
                     </a>
@@ -638,7 +665,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <h3 class="mb-2 text-xl font-bold text-white"> যোগাযোগ</h3>
-                            <p class="text-purple-100">01610333033, 01746893933</p>
+                            <p class="text-purple-100">01610333033, 01746893933, 01309128414</p>
                         </div>
 
                         <div class="border contact-card bg-white/10 backdrop-blur-lg border-white/20">

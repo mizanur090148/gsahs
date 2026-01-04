@@ -4,39 +4,6 @@
 
 @section('content')
     <div>
-        <!-- Hero Section -->
-        {{-- <section id="" class="flex items-end justify-center hero-bg h-fit"
-            style="background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85)),
-    radial-gradient(ellipse at top, rgba(99, 102, 241, 0.3), transparent 70%),
-    radial-gradient(ellipse at bottom right, rgba(236, 72, 153, 0.3), transparent 70%),
-    url({{ asset('uploads/1753777584_bg.webp') }});
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-top:150px;">
-            <div class="text-center">
-                <div class="max-w-6xl px-3 mx-auto">
-                    <h1 class="mb-8 text-6xl font-black leading-none text-white md:text-8xl lg:text-8xl">
-                        স্বাগতম পুনর্মিলনী ২০২৬
-                    </h1>
-
-                    <div class="flex flex-col items-center justify-center gap-6 mb-20 sm:flex-row">
-                        <a href="#registration"
-                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 hover:scale-105">
-                            <i class="mr-3 fas fa-user-plus"></i>
-                            নিবন্ধন করুন
-                        </a>
-                        <a href="#news"
-                            class="px-12 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:scale-105 hover:bg-white hover:text-gray-900">
-                            <i class="mr-3 fas fa-bullhorn"></i>
-                            সর্বশেষ ঘোষণা
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
         <!-- Statistics Section -->
         <section id="stats" class="py-8 bg-gradient-to-br from-gray-50 to-white">
             <div class="px-6 mx-auto max-w-7xl" style="margin-top: 6rem">
@@ -91,7 +58,7 @@
 
                 <!-- Search Filters -->
                 <form method="GET" action="{{ route('registered-students.index') }}"
-                    class="mx-auto max-w-5xl grid gap-6 mb-8 md:grid-cols-4 items-end">
+                    class="grid items-end max-w-5xl gap-6 mx-auto mb-8 md:grid-cols-4">
 
                     <!-- Name -->
                     <div>
@@ -124,9 +91,7 @@
                     <!-- Button -->
                     <div class="flex items-end">
                         <button type="submit"
-                            class="w-full px-6 py-3 font-semibold text-white transition-all duration-300
-                       rounded-lg bg-gradient-to-r from-blue-600 to-purple-600
-                       hover:from-blue-700 hover:to-purple-700">
+                            class="w-full px-6 py-3 font-semibold text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                             <i class="mr-2 fas fa-search"></i>
                             খুঁজুন
                         </button>
@@ -136,9 +101,7 @@
                 <!-- Alumni Cards -->
                 <div class="grid gap-6 md:grid-cols-5 lg:grid-cols-6">
                     @foreach ($alumni as $alumnus)
-                        <div class="alumni-card group relative overflow-hidden rounded-xl bg-white shadow-md
-                   hover:shadow-xl transition-all duration-300
-                   transform hover:-translate-y-1 max-w-sm mx-auto"
+                        <div class="relative max-w-sm mx-auto overflow-hidden transition-all duration-300 transform bg-white shadow-md alumni-card group rounded-xl hover:shadow-xl hover:-translate-y-1"
                             data-name="{{ strtolower($alumnus->name) }}" data-batch="{{ $alumnus->batch }}">
 
                             <!-- Image Section -->
@@ -147,20 +110,17 @@
                     @else
                         src="{{ asset('/assets/images/student.jpeg') }}" @endif
                                     alt="{{ $alumnus->name }}"
-                                    class="w-24 h-24 rounded-full object-cover border-4 border-white
-                           shadow-md transition-transform duration-300
-                           group-hover:scale-105">
+                                    class="object-cover w-24 h-24 transition-transform duration-300 border-4 border-white rounded-full shadow-md group-hover:scale-105">
                             </div>
 
                             <!-- Card Body -->
                             <div class="p-1 text-center">
                                 <h3
-                                    class="mb-1 mt-1 text-sm font-bold text-gray-900
-                           transition-colors group-hover:text-blue-600">
+                                    class="mt-1 mb-1 text-sm font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                                     {{ $alumnus->name }}
                                 </h3>
 
-                                <div class="space-y-2 text-sm custom-card text-gray-600">
+                                <div class="space-y-2 text-sm text-gray-600 custom-card">
                                     <div class="flex items-center justify-center">
                                         <span class="px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
                                             ব্যাচ - {{ $alumnus->batch }}
@@ -187,7 +147,7 @@
 
                                 <!-- Footer -->
                                 {{-- <div
-                                    class="pt-4 mt-4 border-t border-gray-100 flex justify-center gap-6 text-sm text-gray-500">
+                                    class="flex justify-center gap-6 pt-4 mt-4 text-sm text-gray-500 border-t border-gray-100">
                                     <span>
                                         <i class="mr-1 fas fa-t-shirt"></i>
                                         {{ $alumnus->tshirt }}
@@ -211,11 +171,11 @@
                 @endif
 
                 <!-- Pagination -->
-                @if ($alumni && $alumni->hasPages())
+                {{-- @if ($alumni && $alumni->hasPages())
                     <div class="mt-12">
                         {{ $alumni->links() }}
                     </div>
-                @endif
+                @endif --}}
             </div>
         </section>
     </div>

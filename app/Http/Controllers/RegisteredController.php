@@ -20,8 +20,8 @@ class RegisteredController extends Controller
         }
 
         // Use paginate() instead of get() to enable pagination
-        $alumni = $query->orderBy('batch', 'desc')
-            ->paginate(12); // Changed from get() to paginate(12)
+        $alumni = $query->orderBy('id', 'desc')
+            ->get(); // Changed from get() to paginate(12)
 
         // if ($request->ajax()) {
         //     return view('partials.alumni-cards', compact('alumni'));

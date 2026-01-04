@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -57,6 +58,16 @@ class HomeController extends Controller
         $relativesCount = Student::sum('participant_count') - $studentCount;
         $totalIncome = Student::sum('amount');
 
-        return view('home', compact('news', 'sponsors', 'studentCount', 'relativesCount', 'totalIncome'));
+        $today = Carbon::today();
+        $endDate = Carbon::create($today->year, 3, 31);
+
+        // যদি আজ 31 মার্চ পার হয়ে যায় → next year
+        if ($today->gt($endDate)) {
+            $endDate = Carbon::create($today->year + 1, 3, 31);
+        }
+
+        $daysRemaining = $today->diffInDays($endDate);
+
+        return view('home', compact('news', 'daysRemaining', 'sponsors', 'studentCount', 'relativesCount', 'totalIncome'));
     }
 }

@@ -26,6 +26,8 @@ class Student extends Model
         'participant_count',
         'amount',
         'sent_from',
+        'payment_mode',
+        'sent_to',
         'status',
         'ref_code',
     ];

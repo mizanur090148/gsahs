@@ -69,6 +69,11 @@
                         <i class="text-orange-400 fas fa-calendar"></i>
                         <span>কার্যক্রম</span>
                     </a>
+                    <a href="{{ route('galary') }}"
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-calendar"></i>
+                        <span>গ্যালারি</span>
+                    </a>
                 </nav>
                 <!-- Action Buttons (Desktop) -->
                 <div class="items-center hidden space-x-4 lg:flex">
@@ -149,7 +154,7 @@
                             </div>
                             <div>
                                 <h3 class="mb-2 font-bold">গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</h3>
-                                <p class="text-sm text-gray-400">পুনর্মিলনী ২০২৬</p>
+                                <p class="text-sm text-gray-400">গ্র্যান্ড পুনর্মিলনী ২০২৬</p>
                             </div>
                         </div>
                     </a>
@@ -162,7 +167,7 @@
                 <div>
                     <h4 class="mb-2 font-bold">যোগাযোগের তথ্য</h4>
                     <ul class="space-y-2 text-sm">
-                        <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033</li>
+                        <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033, 01746893933, 01309128414</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-envelope"></i>reunion.gsahs@gmail.com</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছরা, সিরাজগঞ্জ
                         </li>
@@ -173,11 +178,11 @@
                 <div class="text-center">
                     <h4 class="mb-3 font-bold">অন্যান্য লিঙ্ক</h4>
                     <div class="flex justify-center mb-6 space-x-4">
-                        <a href="#" target="_blank"
+                        <a href="https://www.messenger.com/cm/AbZUvg5ZnQxbPVDZ/?send_source=cm%3Acopy_invite_link" target="_blank"
                             class="flex items-center justify-center w-10 h-10 transition-colors bg-blue-600 rounded-full hover:bg-blue-700">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://youtube.com/watch?si=Z0AGqWXwvH8kdKbh&v=8BtstMBzC38&feature=youtu.be" target="_blank"
                             class="flex items-center justify-center w-10 h-10 transition-colors bg-red-600 rounded-full hover:bg-blue-500">
                             <i class="fa-brands fa-youtube"></i>
                         </a>

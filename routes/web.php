@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AccountController, AlumniController, ContactController, DonationController, HomeController, NewsController, RegisteredController, StudentController};
+use App\Http\Controllers\{AccountController, NewsAndGallaryController, AlumniController, ContactController, DonationController, HomeController, NewsController, RegisteredController, StudentController};
 
 // Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -21,9 +21,11 @@ Route::prefix('alumni')->group(function () {
 
 // News Section
 Route::prefix('news')->group(function () {
-    Route::get('/', [NewsController::class, 'index'])->name('news.index');
-    Route::get('/{id}', [NewsController::class, 'show'])->name('news.show');
+    Route::get('/', [NewsAndGallaryController::class, 'index'])->name('news.index');
+    Route::get('/{id}', [NewsAndGallaryController::class, 'show'])->name('news.show');
 });
+
+Route::get('galary', [NewsAndGallaryController::class, 'galary'])->name('galary');
 
 Route::prefix('registered-students')->group(function () {
     Route::get('/', [RegisteredController::class, 'index'])->name('registered-students.index');
@@ -38,7 +40,7 @@ Route::prefix('contact')->group(function () {
 
 // Account/Financial Section
 Route::prefix('account')->group(function () {
-    Route::get('/', [AccountController::class, 'index'])->name('account.index');
+    //Route::get('/', [AccountController::class, 'index'])->name('account.index');
 });
 
 // Donation Section

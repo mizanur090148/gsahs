@@ -35,6 +35,8 @@ class StudentController extends Controller
             'participant_count' => 'required_if:registration_type,group|integer|min:1|max:10',
             'amount'            => 'required|numeric',
             'sent_from'         => 'required',
+            'sent_to'           => 'required',
+            'payment_mode'      => 'required',
             'terms_agreed'      => 'required|accepted',
         ]);
 

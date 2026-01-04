@@ -24,7 +24,9 @@ return new class extends Migration
             $table->string('permanent_address')->nullable();
             $table->enum('registration_type', ['single', 'group']);
             $table->integer('participant_count')->nullable();
-            $table->string('sent_from', 30);
+            $table->string('payment_mode', 15)->nullable();
+            $table->string('sent_from', 30)->nullable();
+            $table->string('sent_to', 30)->nullable();
             $table->decimal('amount', 10, 2);
             $table->string('ref_code')->nullable();
             $table->enum('status', ['pending', 'active', 'approved', 'rejected'])->default('pending');
