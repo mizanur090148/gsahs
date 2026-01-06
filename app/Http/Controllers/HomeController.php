@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -57,6 +58,7 @@ class HomeController extends Controller
         $studentCount = Student::count();
         $relativesCount = Student::sum('participant_count') - $studentCount;
         $totalIncome = Student::sum('amount');
+        $totalCollectedMoney = $totalIncome + Donation::sum('amount');
 
         $today = Carbon::today();
         $endDate = Carbon::create($today->year, 3, 31);
@@ -68,6 +70,6 @@ class HomeController extends Controller
 
         $daysRemaining = $today->diffInDays($endDate);
 
-        return view('home', compact('news', 'daysRemaining', 'sponsors', 'studentCount', 'relativesCount', 'totalIncome'));
+        return view('home', compact('news', 'daysRemaining', 'totalCollectedMoney', 'sponsors', 'studentCount', 'relativesCount', 'totalIncome'));
     }
 }

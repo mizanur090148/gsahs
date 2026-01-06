@@ -18,7 +18,7 @@ class DonationController extends Controller
             'name' => 'required|string|max:255',
             'mobile' => 'required|string|max:20',
             'amount' => 'required|numeric',
-            'photo' => 'required|image|max:2048',
+            'photo' => 'nullable|image|max:2048',
             'document' => 'required|file|max:5120',
         ]);
 

@@ -59,11 +59,6 @@
                         <i class="text-orange-400 fas fa-users"></i>
                         <span>নিবন্ধনকৃত শিক্ষার্থী</span>
                     </a>
-                    {{-- <a href="{{ route('alumni.index') }}"
-                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
-                        <i class="text-orange-400 fas fa-users"></i>
-                        <span>প্রাক্তন ছাত্র/ছাত্রী</span>
-                    </a> --}}
                     <a href="{{ route('home') }}#events"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-calendar"></i>
@@ -102,18 +97,18 @@
                 class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-user-plus"></i><span>নিবন্ধন</span>
             </a>
-            <a href="{{ route('alumni.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+            <a href="{{ route('registered-students.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-users"></i><span>নিবন্ধনকৃত শিক্ষার্থী</span>
-            </a>
-
-            <a href="{{ route('alumni.index') }}" rel="noopener noreferrer"
-                class="flex items-center py-2 space-x-2 border-b border-gray-700">
-                <i class="text-orange-400 fas fa-users"></i>
-                <span>নিবন্ধনকৃত শিক্ষার্থী</span>
             </a>
 
             <a href="{{ route('home') }}#events" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-calendar"></i><span>কার্যক্রম</span>
+            </a>
+
+            <a href="{{ route('galary') }}"
+                class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-calendar"></i>
+                <span>গ্যালারি</span>
             </a>
             <a href="{{ route('home') }}#contact"
                 class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:scale-105">
@@ -169,7 +164,7 @@
                     <ul class="space-y-2 text-sm">
                         <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033, 01746893933, 01309128414</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-envelope"></i>reunion.gsahs@gmail.com</li>
-                        <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছরা, সিরাজগঞ্জ
+                        <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছড়া, সিরাজগঞ্জ
                         </li>
                     </ul>
                 </div>

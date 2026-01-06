@@ -115,7 +115,8 @@
                             <i
                                 class="text-3xl text-white transition-transform duration-300 fas fa-clock group-hover:rotate-12"></i>
                         </div>
-                        <div class="mb-3 text-5xl font-black text-red-600 counter" data-target="{{ $daysRemaining }}">0</div>
+                        <div class="mb-3 text-5xl font-black text-red-600 counter" data-target="{{ $daysRemaining }}">0
+                        </div>
                         <div class="text-lg font-semibold text-gray-700">দিন বাকি</div>
                         <div class="w-full h-2 mt-3 overflow-hidden bg-red-100 rounded-full">
                             <div class="h-2 transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-red-500 to-pink-600"
@@ -500,8 +501,8 @@
                 <!-- Summary Cards -->
                 <div class="grid gap-8 mb-12 md:grid-cols-3">
                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
-                        <div class="mb-2 text-sm text-green-600">মোট আয়</div>
-                        <div class="mb-2 text-4xl font-bold text-green-600">{{ 0 }}</div>
+                        <div class="mb-2 text-sm text-green-600">ফি এবং ডোনেশন আদায়</div>
+                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalCollectedMoney }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
 
@@ -513,7 +514,7 @@
 
                     <div class="p-8 text-center border border-blue-200 bg-blue-50 rounded-2xl">
                         <div class="mb-2 text-sm text-blue-600">উদ্বৃত্ত</div>
-                        <div class="mb-2 text-4xl font-bold text-blue-600">0</div>
+                        <div class="mb-2 text-4xl font-bold text-blue-600">{{ $totalCollectedMoney }}</div>
                         <div class="text-sm text-blue-600">টাকা</div>
                     </div>
                 </div>
@@ -681,7 +682,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <h3 class="mb-2 text-xl font-bold text-white">বিদ্যালয়ের ঠিকানা</h3>
-                            <p class="text-purple-100">গোটিয়া, মেছরা, সিরাজগঞ্জ, বাংলাদেশ</p>
+                            <p class="text-purple-100">গোটিয়া, মেছড়া, সিরাজগঞ্জ, বাংলাদেশ</p>
                         </div>
                     </div>
 
