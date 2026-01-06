@@ -354,7 +354,7 @@
                                         class="flex items-center justify-center p-1 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                         <input type="radio" name="payment_mode" value="{{ $size }}"
                                             class="sr-only" {{ old('payment_mode') == $size ? 'checked' : '' }}>
-                                        <span class="font-semibold">👕 {{ $key }}</span>
+                                        <span class="font-semibold">{{ $key }}</span>
                                     </label>
                                 @endforeach
                             </div>
