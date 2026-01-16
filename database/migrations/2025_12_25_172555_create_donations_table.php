@@ -11,10 +11,12 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('father_name')->nullable();
             $table->string('mobile');
+            $table->string('address')->nullable();
             $table->decimal('amount', 10, 2);
-            $table->string('photo');
-            $table->string('document');
+            $table->string('photo')->nullable();
+            $table->string('document')->nullable();
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });

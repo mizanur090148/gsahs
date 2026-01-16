@@ -26,9 +26,19 @@
                             @error('name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div>
+                            <label class="block mb-1 font-semibold text-gray-700">পিতার নাম <span class="text-red-500">*</span></label>
+                            <input name="father_name" value="{{ old('father_name') }}" type="text" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আব্দুল করিম">
+                            @error('father_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
                             <label class="block mb-1 font-semibold text-gray-700">মোবাইল নম্বর <span class="text-red-500">*</span></label>
                             <input name="mobile" value="{{ old('mobile') }}" type="tel" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="০১৭xxxxxxxx">
                             @error('mobile') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                         <div>
+                            <label class="block mb-1 font-semibold text-gray-700">ঠিকানা <span class="text-red-500">*</span></label>
+                            <input name="address" value="{{ old('address') }}" type="text" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আপনার ঠিকানা লিখুন">
+                            @error('address') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div>
                             <label class="block mb-1 font-semibold text-gray-700">মোট পেমেন্ট (টাকা) <span class="text-red-500">*</span></label>

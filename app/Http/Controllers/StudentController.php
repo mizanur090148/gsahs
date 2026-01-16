@@ -75,7 +75,7 @@ class StudentController extends Controller
         // Create student record
         $student = Student::create($validated);
 
-        return redirect()->route('home')
+        return redirect()->route('registered-students.index')
             ->with('success', 'আপনার নিবন্ধন সফলভাবে সম্পন্ন হয়েছে!');
     }
 

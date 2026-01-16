@@ -21,10 +21,11 @@ $events = [
         'description' => '',
     ],
     [
-        'time' => '১০:৩০',
-        'title' => 'শিক্ষক এবং আমন্ত্রিত অতিথি সম্মাননা',
+        'time' => '১০:০০',
+        'title' => 'দুআ, শিক্ষক মন্ডলী, কৃতি ছাত্র/ছাত্রী এবং আমন্ত্রিত অতিথি সম্মাননা',
+       // 'description' => '',
         'description' => '
-        • বিদ্যালয়ের প্রাক্তন ছাত্র/ছাত্রীদের মধ্যে যারা ইন্তেকাল করেছেন তাদের রুহের মাগফেরাতের জন্য দুআ।
+        • বিদ্যালয়ের শিক্ষক মন্ডলী এবং ছাত্র/ছাত্রীদের মধ্যে যারা পরলোকগত হয়েছেন তাদের রুহের মাগফেরাতের জন্য দুআ।।
         • বিদ্যালয় কর্তৃপক্ষের হাতে রিইউনিয়ন আয়োজকদের পক্ষ থেকে সম্মাননা গিফট হস্তান্তর।
         • প্রবীণ সভাপতি আনিছুর রহমান তালুকদারকে সম্মাননা গিফট প্রদান।
         • জীবিত সকল সাবেক ম্যানেজিং কমিটির সভাপতি/সেক্রেটারিকে সম্মাননা ক্রেস্ট প্রদান।
@@ -71,15 +72,15 @@ $events = [
 <div class="timeline-item">
     <div class="timeline-dot"></div>
     <div class="schedule-item">
-        <div class="flex justify-between items-start mb-3">
+        <div class="flex items-start justify-between mb-3">
             <div>
-                <span class="text-sm text-purple-600 font-semibold">{{ $event['time'] }}</span>
+                <span class="text-sm font-semibold text-purple-600">{{ $event['time'] }}</span>
                 <h3 class="text-lg font-bold text-gray-900">{{ $event['title'] }}</h3>
             </div>
             {{-- <span class="text-xs text-gray-500">{{ $event['end'] }}</span> --}}
         </div>
         @if($event['description'])
-        <p  class="text-gray-600 text-sm">{!! nl2br(e($event['description'])) !!}</p>
+        <p  class="text-sm text-gray-600">{!! nl2br(e($event['description'])) !!}</p>
         @endif
     </div>
 </div>

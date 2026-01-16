@@ -17,11 +17,11 @@
     padding-top:150px;">
             <div class="text-center">
                 @if (session('success'))
-                    <div class="fixed z-50 top-6 right-6" data-flash>
+                    <div class="mb-6" data-flash>
                         <div
-                            class="flex items-center px-6 py-4 text-green-800 transition-all duration-500 bg-green-100 border border-green-300 shadow-lg rounded-xl">
+                            class="flex items-center justify-center max-w-2xl px-6 py-4 mx-auto text-green-800 transition-all duration-500 bg-green-100 border border-green-300 shadow-lg rounded-xl">
                             <i class="mr-3 text-2xl text-green-600 fas fa-check-circle"></i>
-                            <span class="font-semibold">
+                            <span class="font-semibold text-center">
                                 {{ session('success') }}
                             </span>
                         </div>
@@ -157,7 +157,8 @@
                     <div class="text-center">
                         <!-- Content can be added here if needed -->
                     </div>
-                    <form action="{{ route('students.store') }}" method="POST" enctype="multipart/form-data">
+                    <form id="registrationForm" action="{{ route('students.store') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="mb-8">
                             {{-- <h3 class="flex items-center mb-3 text-xl font-bold text-gray-900"> --}}
@@ -188,6 +189,9 @@
                                             </div>
                                         </label>
                                     </div>
+                                    @error('registration_type')
+                                        <span class="text-sm text-red-500">{{ 'রেজিস্ট্রেশনের ধরন নির্বাচন করুন' }}</span>
+                                    @enderror
                                 </div>
 
                                 <div id="groupSelectWrapper" class="hidden mb-6">
@@ -505,7 +509,7 @@
                         <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalFee }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
-                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
+                    <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
                         <div class="mb-2 text-sm text-green-600">মোট ডোনেশন</div>
                         <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalDonation }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
@@ -918,6 +922,156 @@
                     }, 300);
                 }
             };
+
+            // Form validation and scroll to required fields
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+                const requiredFields = [{
+                        name: 'registration_type',
+                        type: 'radio',
+                        message: 'রেজিস্ট্রেশনের ধরন নির্বাচন করুন'
+                    },
+                    {
+                        name: 'name',
+                        type: 'text',
+                        message: 'আপনার পূর্ণ নাম লিখুন'
+                    },
+                    {
+                        name: 'father_name',
+                        type: 'text',
+                        message: 'আপনার পিতার নাম লিখুন'
+                    },
+                    {
+                        name: 'photo',
+                        type: 'file',
+                        message: 'আপনার ছবি আপলোড করুন'
+                    },
+                    {
+                        name: 'batch',
+                        type: 'select',
+                        message: 'এসএসসি ব্যাচ সিলেক্ট করুন'
+                    },
+                    {
+                        name: 'tshirt',
+                        type: 'radio',
+                        message: 'গেঞ্জির সাইজ সিলেক্ট করুন'
+                    },
+                    {
+                        name: 'phone',
+                        type: 'text',
+                        message: 'আপনার মোবাইল নম্বর লিখুন'
+                    },
+                    {
+                        name: 'present_address',
+                        type: 'text',
+                        message: 'আপনার ঠিকানা লিখুন'
+                    },
+                    {
+                        name: 'payment_mode',
+                        type: 'radio',
+                        message: 'পেমেন্ট মোড সিলেক্ট করুন'
+                    },
+                    {
+                        name: 'sent_to',
+                        type: 'text',
+                        message: 'যে নাম্বারে টাকা পাঠানো হয়েছে লিখুন'
+                    },
+                    {
+                        name: 'screenshot',
+                        type: 'file',
+                        message: 'আপনার স্ক্রীনশট আপলোড করুন'
+                    },
+                    {
+                        name: 'sent_from',
+                        type: 'text',
+                        message: 'যে নাম্বার থেকে টাকা পাঠানো হয়েছে লিখুন'
+                    },
+                    {
+                        name: 'terms_agreed',
+                        type: 'checkbox',
+                        message: 'শর্তাবলীতে সম্মতি প্রদান করা বাধ্যতামূলক'
+                    }
+                ];
+
+                let firstInvalidField = null;
+                let isValid = true;
+
+                // Clear previous error states
+                document.querySelectorAll('.error-highlight').forEach(el => {
+                    el.classList.remove('error-highlight', 'border-red-500', 'ring-2',
+                        'ring-red-200');
+                    const errorMsg = el.parentNode.querySelector('.custom-error');
+                    if (errorMsg) errorMsg.remove();
+                });
+
+                requiredFields.forEach(field => {
+                    let element = null;
+                    let container = null;
+                    let isFieldValid = false;
+
+                    if (field.type === 'radio') {
+                        element = document.querySelector(`input[name="${field.name}"]:checked`);
+                        isFieldValid = element !== null;
+                        if (!isFieldValid) {
+                            // Find the radio group container
+                            container = document.querySelector(`input[name="${field.name}"]`)
+                                .closest('.grid');
+                        }
+                    } else if (field.type === 'checkbox') {
+                        element = document.querySelector(`input[name="${field.name}"]`);
+                        isFieldValid = element && element.checked;
+                        container = element.closest('.flex');
+                    } else {
+                        element = document.querySelector(`[name="${field.name}"]`);
+                        if (element) {
+                            if (field.type === 'file') {
+                                isFieldValid = element.files && element.files.length > 0;
+                            } else if (field.type === 'select') {
+                                isFieldValid = element.value && element.value.trim() !== '';
+                            } else {
+                                isFieldValid = element.value && element.value.trim() !== '';
+                            }
+                        }
+                        container = element;
+                    }
+
+                    if (!isFieldValid) {
+                        isValid = false;
+                        if ((element || container) && !firstInvalidField) {
+                            firstInvalidField = element || container;
+                        }
+
+                        // Highlight the field
+                        if (container) {
+                            container.classList.add('error-highlight');
+                            if (field.type === 'radio') {
+                                container.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                            } else if (field.type === 'checkbox') {
+                                container.classList.add('border-red-500');
+                            } else {
+                                container.classList.add('border-red-500');
+                            }
+                            // Add error message
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'custom-error text-sm text-red-500 mt-1';
+                            errorDiv.textContent = field.message;
+                            container.parentNode.appendChild(errorDiv);
+                        }
+                    }
+                });
+
+                if (!isValid) {
+                    e.preventDefault();
+                    // Scroll to first invalid field
+                    if (firstInvalidField) {
+                        firstInvalidField.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                        firstInvalidField.focus();
+                    }
+                    return false;
+                }
+            });
         });
     </script>
     <script>

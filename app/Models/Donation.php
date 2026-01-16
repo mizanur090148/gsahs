@@ -11,7 +11,9 @@ class Donation extends Model
 
     protected $fillable = [
         'name',
+        'father_name',
         'mobile',
+        'address',
         'amount',
         'photo',
         'document',

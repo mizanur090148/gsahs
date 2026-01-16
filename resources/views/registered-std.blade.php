@@ -7,6 +7,18 @@
         <!-- Statistics Section -->
         <section id="stats" class="py-8 bg-gradient-to-br from-gray-50 to-white">
             <div class="px-6 mx-auto max-w-7xl" style="margin-top: 6rem">
+                @if (session('success'))
+                    <div class="mb-6" data-flash>
+                        <div
+                            class="flex items-center justify-center max-w-2xl px-6 py-4 mx-auto text-green-800 transition-all duration-500 bg-green-100 border border-green-300 shadow-lg rounded-xl">
+                            <i class="mr-3 text-2xl text-green-600 fas fa-check-circle"></i>
+                            <span class="font-semibold text-center">
+                                {{ session('success') }}
+                            </span>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="mb-4 text-center">
                     <h2 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পরিসংখ্যান</h2>
                 </div>
@@ -99,9 +111,9 @@
                 </form>
 
                 <!-- Alumni Cards -->
-                <div class="grid gap-6 md:grid-cols-5 lg:grid-cols-6">
+                <div class="grid gap-6 md:grid-cols-5">
                     @foreach ($alumni as $alumnus)
-                        <div class="relative max-w-sm mx-auto overflow-hidden transition-all duration-300 transform bg-white shadow-md alumni-card group rounded-xl hover:shadow-xl hover:-translate-y-1"
+                        <div class="relative w-full overflow-hidden transition-all duration-300 transform bg-white shadow-md alumni-card group rounded-xl hover:shadow-xl hover:-translate-y-1"
                             data-name="{{ strtolower($alumnus->name) }}" data-batch="{{ $alumnus->batch }}">
 
                             <!-- Image Section -->
@@ -116,7 +128,7 @@
                             <!-- Card Body -->
                             <div class="p-1 text-center">
                                 <h3
-                                    class="mt-1 mb-1 text-sm font-bold text-gray-900 transition-colors group-hover:text-blue-600">
+                                    class="mt-2 mb-1 text-sm font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                                     {{ $alumnus->name }}
                                 </h3>
 
@@ -359,5 +371,14 @@
                 }
             };
         });
+    </script>
+    <script>
+        setTimeout(() => {
+            const alert = document.querySelector('[data-flash]');
+            if (alert) {
+                alert.classList.add('opacity-0', 'translate-y-[-10px]');
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 4000);
     </script>
 @endpush

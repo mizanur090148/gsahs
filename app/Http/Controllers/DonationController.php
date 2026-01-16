@@ -16,7 +16,9 @@ class DonationController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'father_name' => 'required|string|max:255',
             'mobile' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
             'amount' => 'required|numeric',
             'photo' => 'nullable|image|max:2048',
             'document' => 'required|file|max:5120',
