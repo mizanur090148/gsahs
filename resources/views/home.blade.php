@@ -246,11 +246,11 @@
                             <div class="grid gap-6 mt-6 md:grid-cols-1">
                                 <div>
                                     <label class="block mb-2 font-semibold text-gray-700">আপনার ছবি আপলোড
-                                        {{-- <span class="text-red-500">*</span> --}}
+                                        <span class="text-red-500">*</span>
                                     </label>
                                     <input type="file" name="photo" class="form-input">
                                     @error('photo')
-                                        <span class="text-sm text-red-500">{{ $message }}</span>
+                                        <span class="text-sm text-red-500">{{ 'আপনার ছবি আপলোড করুন' }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -308,7 +308,7 @@
                                 </div>
 
                                 <div>
-                                    <label class="block mb-2 font-semibold text-gray-700">ইমেইল ঠিকানা</label>
+                                    <label class="block mb-2 font-semibold text-gray-700">ইমেইল</label>
                                     <input type="email" name="email" class="form-input"
                                         value="{{ old('email') }}">
                                     @error('email')
@@ -346,7 +346,7 @@
                         </div>
 
                         <div class="mb-6">
-                            <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মোড <span
+                            <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মুড <span
                                     class="text-red-500">*</span></label>
                             <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
                                 @foreach (['বিকাশ' => 'bkash', 'নগদ' => 'nogod', 'রকেট' => 'rocket', 'ট্যাপ' => 'tap'] as $key => $size)
@@ -379,7 +379,7 @@
                                 </label>
                                 <input type="file" name="screenshot" class="form-input">
                                 @error('screenshot')
-                                    <span class="text-sm text-red-500">{{ $message }}</span>
+                                    <span class="text-sm text-red-500">{{ 'আপনার স্ক্রীনশট আপলোড করুন' }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -499,10 +499,15 @@
                 </div>
 
                 <!-- Summary Cards -->
-                <div class="grid gap-8 mb-12 md:grid-cols-3">
+                <div class="grid gap-8 mb-12 md:grid-cols-4">
                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
-                        <div class="mb-2 text-sm text-green-600">ফি এবং ডোনেশন আদায়</div>
-                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalCollectedMoney }}</div>
+                        <div class="mb-2 text-sm text-green-600">মোট ফি</div>
+                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalFee }}</div>
+                        <div class="text-sm text-green-600">টাকা</div>
+                    </div>
+                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
+                        <div class="mb-2 text-sm text-green-600">মোট ডোনেশন</div>
+                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalDonation }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
 
