@@ -23,7 +23,7 @@ class HomeController extends Controller
             ],
             (object)[
                 'id' => 2,
-                'title' => 'রিইউনিয়ন রেজিস্ট্রেশন সংক্রান্ত নিয়মাবলি',
+                'title' => 'গ্র্যান্ড পুনর্মিলনী ২০২৬ রেজিস্ট্রেশন সংক্রান্ত নিয়মাবলি',
                 'description' => 'পুনর্মিলনী নিয়মাবলী',
                 'image' => 'photos/1759986059_1759054600_favicon.png',
                 'category' => 'গুরুত্বপূর্ণ',

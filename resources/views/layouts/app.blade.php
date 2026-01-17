@@ -66,8 +66,13 @@
                     </a>
                     <a href="{{ route('galary') }}"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
-                        <i class="text-orange-400 fas fa-calendar"></i>
+                        <i class="text-orange-400 fas fa-images"></i>
                         <span>গ্যালারি</span>
+                    </a>
+                    <a href="{{ route('blogs.index') }}"
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-blog"></i>
+                        <span>ব্লগ</span>
                     </a>
                 </nav>
                 <!-- Action Buttons (Desktop) -->
@@ -97,7 +102,8 @@
                 class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-user-plus"></i><span>নিবন্ধন</span>
             </a>
-            <a href="{{ route('registered-students.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+            <a href="{{ route('registered-students.index') }}"
+                class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-users"></i><span>নিবন্ধনকৃত শিক্ষার্থী</span>
             </a>
 
@@ -105,10 +111,14 @@
                 <i class="text-orange-400 fas fa-calendar"></i><span>কার্যক্রম</span>
             </a>
 
-            <a href="{{ route('galary') }}"
-                class="flex items-center py-2 space-x-2 border-b border-gray-700">
-                <i class="text-orange-400 fas fa-calendar"></i>
+            <a href="{{ route('galary') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-images"></i>
                 <span>গ্যালারি</span>
+            </a>
+
+            <a href="{{ route('blogs.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-blog"></i>
+                <span>ব্লগ</span>
             </a>
             <a href="{{ route('home') }}#contact"
                 class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:scale-105">
@@ -162,7 +172,8 @@
                 <div>
                     <h4 class="mb-2 font-bold">যোগাযোগের তথ্য</h4>
                     <ul class="space-y-2 text-sm">
-                        <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033, 01746893933, 01309128414</li>
+                        <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033, 01746893933,
+                            01309128414</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-envelope"></i>reunion.gsahs@gmail.com</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছড়া, সিরাজগঞ্জ
                         </li>
@@ -173,11 +184,13 @@
                 <div class="text-center">
                     <h4 class="mb-3 font-bold">অন্যান্য লিঙ্ক</h4>
                     <div class="flex justify-center mb-6 space-x-4">
-                        <a href="https://www.messenger.com/cm/AbZUvg5ZnQxbPVDZ/?send_source=cm%3Acopy_invite_link" target="_blank"
+                        <a href="https://www.messenger.com/cm/AbZUvg5ZnQxbPVDZ/?send_source=cm%3Acopy_invite_link"
+                            target="_blank"
                             class="flex items-center justify-center w-10 h-10 transition-colors bg-blue-600 rounded-full hover:bg-blue-700">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://youtube.com/watch?si=Z0AGqWXwvH8kdKbh&v=8BtstMBzC38&feature=youtu.be" target="_blank"
+                        <a href="https://youtube.com/watch?si=Z0AGqWXwvH8kdKbh&v=8BtstMBzC38&feature=youtu.be"
+                            target="_blank"
                             class="flex items-center justify-center w-10 h-10 transition-colors bg-red-600 rounded-full hover:bg-blue-500">
                             <i class="fa-brands fa-youtube"></i>
                         </a>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AccountController, NewsAndGallaryController, AlumniController, ContactController, DonationController, HomeController, NewsController, RegisteredController, StudentController};
+use App\Http\Controllers\{AccountController, NewsAndGallaryController, AlumniController, ContactController, DonationController, HomeController, NewsController, RegisteredController, StudentController, BlogController};
 
 // Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -26,6 +26,14 @@ Route::prefix('news')->group(function () {
 });
 
 Route::get('galary', [NewsAndGallaryController::class, 'galary'])->name('galary');
+
+// Blog Section
+Route::prefix('blogs')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('blogs.index');
+    Route::get('/create', [BlogController::class, 'create'])->name('blogs.create');
+    Route::post('/', [BlogController::class, 'store'])->name('blogs.store');
+    Route::get('/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+});
 
 Route::prefix('registered-students')->group(function () {
     Route::get('/', [RegisteredController::class, 'index'])->name('registered-students.index');

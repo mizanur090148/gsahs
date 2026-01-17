@@ -148,8 +148,7 @@
                 <div class="mb-6 text-center">
                     <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পুনর্মিলনীর জন্য নিবন্ধন
                     </h2>
-                    <p class="text-xl text-gray-600">আপনার তথ্য পূরণ করে রিইউনিয়নে অংশগ্রহণ নিশ্চিত করুন, আমরা রিইউনিয়ন
-                        অনুষ্ঠানে আপনাকে দেখার অপেক্ষায় আছি!</p>
+                    <p class="text-xl text-gray-600">আপনার তথ্য পূরণ করে গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ অংশগ্রহণ নিশ্চিত করুন। আমরা গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ আপনাকে দেখার অপেক্ষায় আছি।</p>
                     <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                 </div>
 
@@ -350,7 +349,7 @@
                         </div>
 
                         <div class="mb-6">
-                            <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মুড <span
+                            <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মোড<span
                                     class="text-red-500">*</span></label>
                             <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
                                 @foreach (['বিকাশ' => 'bkash', 'নগদ' => 'nogod', 'রকেট' => 'rocket', 'ট্যাপ' => 'tap'] as $key => $size)
@@ -617,7 +616,7 @@
             <div class="max-w-6xl px-6 mx-auto">
                 <div class="mb-16 text-center">
                     <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">কার্যক্রমের সময়সূচী</h2>
-                    <p class="text-xl text-gray-600">পুনর্মিলনী দিনের প্রতিটি মুহূর্তের বিস্তারিত তথ্য</p>
+                    <p class="text-xl text-gray-600">গ্র্যান্ড পুনর্মিলনী দিনের প্রতিটি মুহূর্তের বিস্তারিত তথ্য</p>
                 </div>
 
                 <!-- Timeline -->

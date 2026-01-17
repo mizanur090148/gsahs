@@ -1,0 +1,297 @@
+@extends('layouts.app')
+
+@section('title', 'ব্লগ - গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়')
+
+@section('content')
+    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <!-- Hero Section -->
+        <section
+            class="relative py-16 md:py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
+                <!-- Floating Elements -->
+                <div class="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+                <div class="absolute top-40 right-20 w-24 h-24 bg-yellow-300/10 rounded-full animate-bounce"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-white/5 rounded-full animate-pulse"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute bottom-20 right-10 w-40 h-40 bg-yellow-300/5 rounded-full animate-bounce"
+                    style="animation-delay: 0.5s;"></div>
+                <!-- Grid Pattern -->
+                <div class="absolute inset-0 opacity-10">
+                    <div class="absolute inset-0"
+                        style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 20px 20px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative max-w-5xl px-6 mx-auto text-center">
+                <!-- Icon -->
+                <div
+                    class="inline-flex items-center justify-center w-20 h-20 mb-8 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl">
+                    <i class="text-3xl text-yellow-300 fas fa-blog"></i>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="mb-6 text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+                    আমাদের <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 relative">
+                        ব্লগ
+                        <div
+                            class="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full opacity-80">
+                        </div>
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="max-w-3xl mx-auto text-xl md:text-2xl text-blue-100 leading-relaxed font-medium mb-8">
+                    শিক্ষার্থী, শিক্ষক এবং প্রাক্তন ছাত্র-ছাত্রীদের <span class="text-yellow-200 font-semibold">লেখা এবং
+                        গল্প</span>
+                </p>
+
+                <!-- Stats -->
+                <div class="flex items-center justify-center space-x-8 mb-10">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">{{ $blogs->total() }}</div>
+                        <div class="text-sm text-blue-200">ব্লগ পোস্ট</div>
+                    </div>
+                    <div class="w-px h-12 bg-white/30"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">{{ $blogs->count() }}</div>
+                        <div class="text-sm text-blue-200">এই পাতায়</div>
+                    </div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="flex items-center justify-center space-x-4">
+                    <div class="w-12 h-1 bg-yellow-300 rounded-full"></div>
+                    <div class="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                    <div class="w-8 h-1 bg-yellow-300 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-12 h-1 bg-yellow-300 rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="relative">
+            <!-- Floating Write Button -->
+            <div class="fixed bottom-8 right-8 z-50">
+                <a href="{{ route('blogs.create') }}"
+                    class="inline-flex items-center px-6 py-4 font-bold text-white transition-all duration-300 transform shadow-2xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 rounded-2xl hover:shadow-green-500/50 hover:scale-110 hover:-translate-y-1 group">
+                    <i class="mr-3 text-xl fas fa-pen-fancy group-hover:rotate-12 transition-transform duration-300"></i>
+                    <span class="hidden sm:inline">ব্লগ লিখুন</span>
+                    <span class="sm:hidden">+</span>
+                </a>
+            </div>
+
+            <!-- Blog Posts Section -->
+            <section class="py-20">
+                <div class="max-w-7xl px-6 mx-auto">
+                    @if ($blogs->count() > 0)
+                        <!-- Section Header -->
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                                সাম্প্রতিক <span class="text-indigo-600">ব্লগ পোস্ট</span>
+                            </h2>
+                            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                                আমাদের সম্প্রদায়ের সদস্যদের লেখা ও অভিজ্ঞতা পড়ুন
+                            </p>
+                            <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto mt-6">
+                            </div>
+                        </div>
+
+                        <!-- Blog Grid -->
+                        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+                            @foreach ($blogs as $blog)
+                                <article
+                                    class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100">
+                                    <!-- Card Header -->
+                                    <div class="relative p-6 pb-4">
+                                        <!-- Author & Date -->
+                                        <div class="flex items-center justify-between mb-4">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                                                    <i class="text-white fas fa-user text-sm"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="text-sm font-semibold text-gray-900">
+                                                        {{ $blog->writer_name }}</div>
+                                                    <div class="text-xs text-gray-500">
+                                                        {{ $blog->created_at->diffForHumans() }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center space-x-1">
+                                                <i class="fas fa-eye text-gray-400 text-sm"></i>
+                                                <span class="text-xs text-gray-500">{{ rand(50, 500) }}</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Title -->
+                                        <h3
+                                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300 leading-tight">
+                                            <a href="{{ route('blogs.show', $blog) }}"
+                                                class="block hover:underline decoration-2 underline-offset-4">
+                                                {{ Str::limit($blog->title, 60) }}
+                                            </a>
+                                        </h3>
+
+                                        <!-- Excerpt -->
+                                        <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                                            {!! Str::limit(strip_tags($blog->story), 150) !!}
+                                        </p>
+
+                                        <!-- Tags/Categories (Future Enhancement) -->
+                                        <div class="flex items-center space-x-2 mb-4">
+                                            <span
+                                                class="inline-flex items-center px-2 py-1 text-xs font-medium text-indigo-700 bg-indigo-100 rounded-full">
+                                                <i class="mr-1 fas fa-tag"></i>
+                                                ব্লগ
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+                                                <i class="mr-1 fas fa-check-circle"></i>
+                                                অনুমোদিত
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Footer -->
+                                    <div class="px-6 pb-6">
+                                        <div class="flex items-center justify-between">
+                                            <a href="{{ route('blogs.show', $blog) }}"
+                                                class="inline-flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-xl transition-all duration-300 group/btn">
+                                                <span>বিস্তারিত পড়ুন</span>
+                                                <i
+                                                    class="ml-2 fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                                            </a>
+
+                                            <!-- Reading Time Estimate -->
+                                            <div class="flex items-center text-xs text-gray-500">
+                                                <i class="mr-1 fas fa-clock"></i>
+                                                {{ ceil(str_word_count(strip_tags($blog->story)) / 200) }} মিনিট
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hover Effect Overlay -->
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl">
+                                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+
+                        <!-- Enhanced Pagination -->
+                        <div class="mt-16 flex justify-center">
+                            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
+                                {{ $blogs->appends(request()->query())->links() }}
+                            </div>
+                        </div>
+                    @else
+                        <!-- Enhanced Empty State -->
+                        <div class="text-center py-24">
+                            <div class="relative mb-8">
+                                <div
+                                    class="w-32 h-32 mx-auto bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center">
+                                    <i class="text-6xl text-indigo-400 fas fa-book-open"></i>
+                                </div>
+                                <!-- Floating elements -->
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full animate-bounce">
+                                </div>
+                                <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-indigo-300 rounded-full animate-bounce"
+                                    style="animation-delay: 0.5s;"></div>
+                            </div>
+
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                                এখনও কোনো <span class="text-indigo-600">ব্লগ</span> নেই
+                            </h3>
+                            <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
+                                আপনিই প্রথম হোন! আপনার গল্প, অভিজ্ঞতা এবং চিন্তাভাবনা শেয়ার করে আমাদের ব্লগ সমৃদ্ধ করুন।
+                            </p>
+
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                                <a href="{{ route('blogs.create') }}"
+                                    class="inline-flex items-center px-8 py-4 font-bold text-white transition-all duration-300 transform shadow-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-2xl hover:shadow-2xl hover:scale-105">
+                                    <i class="mr-3 fas fa-plus-circle"></i>
+                                    প্রথম ব্লগ লিখুন
+                                </a>
+                                <a href="{{ route('home') }}"
+                                    class="inline-flex items-center px-6 py-3 font-semibold text-gray-700 hover:text-gray-900 transition-colors">
+                                    <i class="mr-2 fas fa-home"></i>
+                                    হোমে ফিরে যান
+                                </a>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </section>
+
+            <!-- Newsletter/CTA Section (Optional) -->
+            <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600">
+                <div class="max-w-4xl px-6 mx-auto text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        নতুন ব্লগ পোস্টের <span class="text-yellow-300">আপডেট</span> পেতে চান?
+                    </h3>
+                    <p class="text-indigo-100 mb-8 text-lg">
+                        আমাদের সাথে যুক্ত থাকুন এবং নতুন লেখা পড়ার সুযোগ পান
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="{{ route('blogs.create') }}"
+                            class="inline-flex items-center px-6 py-3 font-semibold text-indigo-600 bg-white hover:bg-gray-50 rounded-xl transition-colors duration-300">
+                            <i class="mr-2 fas fa-pen-fancy"></i>
+                            লিখতে শুরু করুন
+                        </a>
+                        <a href="{{ route('blogs.index') }}"
+                            class="inline-flex items-center px-6 py-3 font-semibold text-white border-2 border-white hover:bg-white hover:text-indigo-600 rounded-xl transition-all duration-300">
+                            <i class="mr-2 fas fa-list"></i>
+                            সব ব্লগ দেখুন
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+@endsection
+
+@push('styles')
+    <style>
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+        }
+
+        /* Smooth animations */
+        * {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced card hover effects */
+        .group:hover .group\/btn {
+            transform: translateX(4px);
+        }
+    </style>
+@endpush
