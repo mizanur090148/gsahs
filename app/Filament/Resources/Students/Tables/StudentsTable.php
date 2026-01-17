@@ -52,9 +52,9 @@ class StudentsTable
                     ->sortable(),
                 TextColumn::make('sent_from')
                     ->searchable(),
-                TextColumn::make('amount')
-                    ->numeric()
-                    ->sortable(),
+               TextColumn::make('amount')
+                ->label('Amount')
+                ->numeric(decimalPlaces: 2),
                 TextColumn::make('status')
                     ->badge(),
                 TextColumn::make('created_at')

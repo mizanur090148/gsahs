@@ -72,7 +72,7 @@
                     <a href="{{ route('blogs.index') }}"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-blog"></i>
-                        <span>ব্লগ</span>
+                        <span>গল্প</span>
                     </a>
                 </nav>
                 <!-- Action Buttons (Desktop) -->
@@ -118,7 +118,7 @@
 
             <a href="{{ route('blogs.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-blog"></i>
-                <span>ব্লগ</span>
+                <span>গল্প</span>
             </a>
             <a href="{{ route('home') }}#contact"
                 class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:scale-105">

@@ -14,7 +14,7 @@
                     <i class="text-2xl text-yellow-300 fas fa-blog"></i>
                 </div>
                 <h1 class="mb-2 text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
-                    আমাদের <span class="text-yellow-300">ব্লগ</span>
+                    আমাদের <span class="text-yellow-300">গল্প</span>
                 </h1>
                 <p class="max-w-2xl mx-auto text-lg font-medium leading-relaxed md:text-xl text-blue-50">
                     শিক্ষার্থী, শিক্ষক এবং প্রাক্তন ছাত্র-ছাত্রীদের লেখা এবং গল্প
@@ -34,7 +34,7 @@
                 <a href="{{ route('blogs.create') }}"
                     class="inline-flex items-center px-8 py-4 font-bold text-white transition-all duration-300 transform shadow-2xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-2xl hover:shadow-green-500/50 hover:scale-105 hover:-translate-y-1">
                     <i class="mr-3 fas fa-pen-fancy"></i>
-                    ব্লগ লিখুন
+                    গল্প লিখুন
                 </a>
             </div>
 
@@ -45,10 +45,10 @@
                         <!-- Section Header -->
                         <div class="mb-5 text-center">
                             <h2 class="mb-1 text-3xl font-bold text-gray-900">
-                                সাম্প্রতিক <span class="text-indigo-600">ব্লগ পোস্ট</span>
+                                সাম্প্রতিক <span class="text-indigo-600"> গল্প</span>
                             </h2>
                             <p class="text-lg text-gray-600">
-                                শিক্ষার্থীদের সদস্যদের লেখা ও অভিজ্ঞতা পড়ুন
+                              আমাদের স্মৃতির হাসি, কান্না এবং ভালবাসার গল্প
                             </p>
                         </div>
 

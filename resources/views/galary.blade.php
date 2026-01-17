@@ -37,7 +37,7 @@
             </div>
         </section> --}}
 
-        <section class="py-8 bg-gradient-to-br from-white to-gray-50">
+        <section style="padding-top: 8rem" class="py-8 bg-gradient-to-br from-white to-gray-50">
             <div class="px-6 mx-auto max-w-7xl">
                 <div class="mb-8 text-center">
                     <h2 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl">

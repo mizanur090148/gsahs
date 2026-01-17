@@ -502,27 +502,32 @@
                 </div>
 
                 <!-- Summary Cards -->
-                <div class="grid gap-8 mb-12 md:grid-cols-4">
+                <div class="grid gap-8 mb-12 md:grid-cols-5">
                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
-                        <div class="mb-2 text-sm text-green-600">মোট ফি</div>
-                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalFee }}</div>
+                        <div class="mb-2 text-sm text-green-600">রেজিষ্ট্রেশন ফি আদায়</div>
+                        <div class="mb-2 text-2xl font-bold text-green-600">{{ $totalFee }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
                     <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
-                        <div class="mb-2 text-sm text-green-600">মোট ডোনেশন</div>
-                        <div class="mb-2 text-4xl font-bold text-green-600">{{ $totalDonation }}</div>
+                        <div class="mb-2 text-sm text-green-600">ডোনেশন কালেকশন</div>
+                        <div class="mb-2 text-2xl font-bold text-green-600">{{ $totalDonation }}</div>
+                        <div class="text-sm text-green-600">টাকা</div>
+                    </div>
+                    <div class="p-8 text-center border border-green-200 bg-green-50 rounded-2xl">
+                        <div class="mb-2 text-sm text-green-600">ফি এবং ডোনেশন আদায়</div>
+                        <div class="mb-2 text-2xl font-bold text-green-600">{{ $totalCollectedMoney }}</div>
                         <div class="text-sm text-green-600">টাকা</div>
                     </div>
 
                     <div class="p-8 text-center border border-red-200 bg-red-50 rounded-2xl">
                         <div class="mb-2 text-sm text-red-600">মোট ব্যয়</div>
-                        <div class="mb-2 text-4xl font-bold text-red-600">0</div>
+                        <div class="mb-2 text-2xl font-bold text-red-600">0</div>
                         <div class="text-sm text-red-600">টাকা</div>
                     </div>
 
                     <div class="p-8 text-center border border-blue-200 bg-blue-50 rounded-2xl">
                         <div class="mb-2 text-sm text-blue-600">উদ্বৃত্ত</div>
-                        <div class="mb-2 text-4xl font-bold text-blue-600">{{ $totalCollectedMoney }}</div>
+                        <div class="mb-2 text-2xl font-bold text-blue-600">{{ $totalCollectedMoney }}</div>
                         <div class="text-sm text-blue-600">টাকা</div>
                     </div>
                 </div>
