@@ -8,52 +8,82 @@
         <div id="donationModalContent"
             class="w-full max-w-2xl max-h-screen mx-4 overflow-y-auto transition-all duration-300 transform scale-95 bg-white shadow-2xl opacity-0 rounded-2xl">
             <!-- Header -->
-            <div class="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 class="text-2xl font-bold text-gray-900">ডোনেশন ফর্ম</h3>
+            <div class="flex items-center justify-between p-3 border-b border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900">ডোনেশন ফর্ম </h3>
                 <button onclick="closeDonationModal()"
                     class="p-2 text-gray-400 transition-colors rounded-lg hover:text-gray-600 hover:bg-gray-100">
                     <i class="text-xl fas fa-times"></i>
                 </button>
             </div>
             <!-- Body -->
-            <div class="px-6 py-8">
-                <form action="{{ route('donate.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <div class="px-6 pb-4 mb-4">
+                <form action="{{ route('donate.store') }}" method="POST" enctype="multipart/form-data"
+                    class="space-y-6">
                     @csrf
                     <div class="grid gap-6 md:grid-cols-2">
                         <div>
-                            <label class="block mb-1 font-semibold text-gray-700">নাম <span class="text-red-500">*</span></label>
-                            <input name="name" value="{{ old('name') }}" type="text" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আব্দুল করিম">
-                            @error('name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                            <label class="block mb-1 font-semibold text-gray-700">নাম <span
+                                    class="text-red-500">*</span></label>
+                            <input name="name" value="{{ old('name') }}" type="text"
+                                class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আব্দুল করিম">
+                            @error('name')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
-                            <label class="block mb-1 font-semibold text-gray-700">পিতার নাম <span class="text-red-500">*</span></label>
-                            <input name="father_name" value="{{ old('father_name') }}" type="text" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আব্দুল করিম">
-                            @error('father_name') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                            <label class="block mb-1 font-semibold text-gray-700">পিতার নাম <span
+                                    class="text-red-500">*</span></label>
+                            <input name="father_name" value="{{ old('father_name') }}" type="text"
+                                class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আব্দুল করিম">
+                            @error('father_name')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
-                            <label class="block mb-1 font-semibold text-gray-700">মোবাইল নম্বর <span class="text-red-500">*</span></label>
-                            <input name="mobile" value="{{ old('mobile') }}" type="tel" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="০১৭xxxxxxxx">
-                            @error('mobile') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
-                        </div>
-                         <div>
-                            <label class="block mb-1 font-semibold text-gray-700">ঠিকানা <span class="text-red-500">*</span></label>
-                            <input name="address" value="{{ old('address') }}" type="text" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আপনার ঠিকানা লিখুন">
-                            @error('address') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
-                        </div>
-                        <div>
-                            <label class="block mb-1 font-semibold text-gray-700">মোট পেমেন্ট (টাকা) <span class="text-red-500">*</span></label>
-                            <input name="amount" value="{{ old('amount') }}" type="number" step="0.01" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="amount">
-                            @error('amount') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                            <label class="block mb-1 font-semibold text-gray-700">মোবাইল নম্বর <span
+                                    class="text-red-500">*</span></label>
+                            <input name="mobile" value="{{ old('mobile') }}" type="tel"
+                                class="w-full px-4 py-2 border rounded-lg form-input" placeholder="০১৭xxxxxxxx">
+                            @error('mobile')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-gray-700">ছবি আপলোড</label>
+                            <label class="block mb-1 font-semibold text-gray-700">ঠিকানা <span
+                                    class="text-red-500">*</span></label>
+                            <input name="address" value="{{ old('address') }}" type="text"
+                                class="w-full px-4 py-2 border rounded-lg form-input" placeholder="আপনার ঠিকানা লিখুন">
+                            @error('address')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div>
+                            <label class="block mb-1 font-semibold text-gray-700">মোট পেমেন্ট (টাকা) <span
+                                    class="text-red-500">*</span></label>
+                            <input name="amount" value="{{ old('amount') }}" type="number" step="0.01"
+                                class="w-full px-4 py-2 border rounded-lg form-input" placeholder="amount">
+                            @error('amount')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-gray-700">ছবি আপলোড</label>
                             <input type="file" name="photo" class="form-input">
-                            @error('photo') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                            @error('photo')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-gray-700">লেনদেন ডকুমেন্ট আপলোড <span class="text-red-500">*</span></label>
+                            <label class="block mb-1 font-semibold text-gray-700">লেনদেন ডকুমেন্ট আপলোড <span
+                                    class="text-red-500">*</span></label>
                             <input type="file" name="document" class="form-input">
-                            @error('document') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                            @error('document')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div>
+                            <label class="block pt-5 pl-5 mt-4 text-2xl gray-700 font--semibold">বিকাশ নাম্বার </br> 01610333033 </label>
+
                         </div>
                     </div>
                     <button type="submit"
