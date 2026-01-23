@@ -148,7 +148,8 @@
                 <div class="mb-6 text-center">
                     <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl text-gradient">পুনর্মিলনীর জন্য নিবন্ধন
                     </h2>
-                    <p class="text-xl text-gray-600">আপনার তথ্য পূরণ করে গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ অংশগ্রহণ নিশ্চিত করুন। আমরা গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ আপনাকে দেখার অপেক্ষায় আছি।</p>
+                    <p class="text-xl text-gray-600">আপনার তথ্য পূরণ করে গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ অংশগ্রহণ নিশ্চিত
+                        করুন। আমরা গ্রাণ্ড পুনর্মিলনী - ২০২৬ - এ আপনাকে দেখার অপেক্ষায় আছি।</p>
                     <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                 </div>
 
@@ -303,8 +304,10 @@
                                 <div>
                                     <label class="block mb-2 font-semibold text-gray-700">মোবাইল নম্বর <span
                                             class="text-red-500">*</span></label>
-                                    <input type="tel" name="phone" class="form-input"
-                                        value="{{ old('phone') }}">
+                                    <input type="tel" name="phone" class="form-input" value="{{ old('phone') }}"
+                                        required pattern="^(?:\+?88)?01[3-9]\d{8}$" placeholder="01XXXXXXXXX"
+                                        title="সঠিক মোবাইল নম্বর লিখুন (যেমন: 01733714009)" minlength="11"
+                                        maxlength="14">
                                     @error('phone')
                                         <span class="text-sm text-red-500">{{ 'আপনার মোবাইল নম্বর লিখুন' }}</span>
                                     @enderror

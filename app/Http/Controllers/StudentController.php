@@ -27,7 +27,7 @@ class StudentController extends Controller
             'photo'             => 'required|image|max:2048',
             'screenshot'        => 'required|image|max:2048',
             'tshirt'            => 'required|string|in:S,M,L,XL,XXL',
-            'phone'             => 'required|string|max:20',
+            'phone'             => 'required|regex:/^(?:\+?88)?01[3-9]\d{8}$/|max:20',
             'email'             => 'nullable|email',
             'profession'        => 'nullable|string|max:255',
             'present_address'   => 'required|string',
