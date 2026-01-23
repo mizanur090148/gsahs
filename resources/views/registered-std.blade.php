@@ -135,7 +135,7 @@
                                 <div class="space-y-2 text-sm text-gray-600 custom-card">
                                     <div class="flex items-center justify-center">
                                         <span class="px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
-                                            ব্যাচ - {{ $alumnus->batch }}
+                                            ব্যাচ  -  {{ $alumnus->batch }}
                                         </span>
                                     </div>
                                     <div class="flex items-center justify-center">
@@ -149,12 +149,17 @@
                                             <span class="truncate max-w-[220px]">{{ $alumnus->email }}</span>
                                         </div>
                                     @endif
-                                    @if ($alumnus->tshirt)
+                                    {{-- @if ($alumnus->tshirt)
                                         <div class="flex items-center justify-center">
                                             <i class="mr-1 fas fa-t-shirt"></i>
                                             <span class="truncate max-w-[220px]">{{ $alumnus->tshirt }}</span>
                                         </div>
-                                    @endif
+                                    @endif --}}
+                                    <div class="flex items-center justify-center">
+                                        <span class="px-3 py-1 text-xs font-semibold text-white {{ $alumnus->status === 'active' ? 'bg-green-600' : 'bg-yellow-500' }} rounded-full">
+                                            Status  - {{ $alumnus->status }}
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <!-- Footer -->

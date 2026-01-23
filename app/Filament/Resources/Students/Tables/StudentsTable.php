@@ -37,36 +37,48 @@ class StudentsTable
                 TextColumn::make('tshirt')
                     ->searchable(),
                 TextColumn::make('phone')
-                    ->searchable(),
+                    ->searchable()
+                    ->default('-'),
                 TextColumn::make('email')
                     ->label('Email address')
-                    ->searchable(),
+                    ->searchable()
+                    ->default('-'),
                 TextColumn::make('present_address')
-                    ->searchable(),
+                    ->searchable()
+                    ->default('-'),
                 TextColumn::make('registration_type')
-                    ->badge(),
+                    ->badge()
+                    ->default('single'),
                 TextColumn::make('sent_to')
-                    ->searchable(),
+                    ->searchable()
+                    ->default('-'),
                 TextColumn::make('participant_count')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->default(0),
                 TextColumn::make('sent_from')
-                    ->searchable(),
-               TextColumn::make('amount')
-                ->label('Amount')
-                ->numeric(decimalPlaces: 2),
+                    ->searchable()
+                    ->default('-'),
+                TextColumn::make('amount')
+                    ->label('Amount')
+                    ->numeric(decimalPlaces: 2)
+                    ->default(0),
                 TextColumn::make('status')
-                    ->badge(),
+                    ->badge()
+                    ->default('pending'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->default('-'),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->default('-'),
                 TextColumn::make('payment_mode')
-                    ->searchable(),
+                    ->searchable()
+                    ->default('-'),
             ])
             ->filters([
                 SelectFilter::make('batch')
