@@ -490,8 +490,8 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //         content: `
 //             <h4 class="text-lg font-semibold text-gray-900 mb-3">গুরুত্বপূর্ণ ঘোষণা</h4>
 //             <p class="mb-4">প্রিয় প্রাক্তন ও বর্তমান শিক্ষার্থীবৃন্দ,</p>
-//             <p class="mb-4">আমরা আনন্দের সাথে জানাচ্ছি যে, পুনর্মিলনী ২০২৬ এর নিবন্ধনের শেষ তারিখ <strong>১৫ ডিসেম্বর ২০২৬</strong> পর্যন্ত বৃদ্ধি করা হয়েছে।</p>
-            
+//             <p class="mb-4">আমরা আনন্দের সাথে জানাচ্ছি যে, পুনর্মিলনী-২০২৬ এর নিবন্ধনের শেষ তারিখ <strong>১৫ ডিসেম্বর ২০২৬</strong> পর্যন্ত বৃদ্ধি করা হয়েছে।</p>
+
 //             <h5 class="font-semibold text-gray-900 mb-2">নিবন্ধন প্রক্রিয়া:</h5>
 //             <ul class="list-disc list-inside mb-4 space-y-1">
 //                 <li>অনলাইন নিবন্ধন ফর্ম পূরণ করুন</li>
@@ -499,11 +499,11 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //                 <li>বিকাশ/নগদ/রকেট এর মাধ্যমে পেমেন্ট করুন</li>
 //                 <li>Transaction ID জমা দিন</li>
 //             </ul>
-            
+
 //             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
 //                 <p class="text-yellow-800"><strong>মনে রাখবেন:</strong> নিবন্ধনের পর আপনি একটি নিশ্চিতকরণ SMS পাবেন।</p>
 //             </div>
-            
+
 //             <p>আরো তথ্যের জন্য যোগাযোগ করুন: <strong>০১৭১২-৩৪৫৬৭৮</strong></p>
 //         `
 //     },
@@ -513,8 +513,8 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //         iconBg: 'bg-blue-500',
 //         content: `
 //             <h4 class="text-lg font-semibold text-gray-900 mb-3">বিস্তারিত কার্যক্রম</h4>
-//             <p class="mb-4">পুনর্মিলনী ২০২৬ এর সম্পূর্ণ কার্যক্রমের সময়সূচী প্রকাশ করা হলো:</p>
-            
+//             <p class="mb-4">পুনর্মিলনী-২০২৬ এর সম্পূর্ণ কার্যক্রমের সময়সূচী প্রকাশ করা হলো:</p>
+
 //             <div class="bg-blue-50 rounded-lg p-4 mb-4">
 //                 <h5 class="font-semibold text-blue-900 mb-3">দিন ১: ১৫ ডিসেম্বর ২০২৬</h5>
 //                 <div class="space-y-2 text-sm">
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //                     <div class="flex justify-between"><span>১৪:০০ - ১৭:০০</span><span>সাংস্কৃতিক অনুষ্ঠান</span></div>
 //                 </div>
 //             </div>
-            
+
 //             <div class="bg-green-50 rounded-lg p-4 mb-4">
 //                 <h5 class="font-semibold text-green-900 mb-3">দিন ২: ১৬ ডিসেম্বর ২০২৬</h5>
 //                 <div class="space-y-2 text-sm">
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //                     <div class="flex justify-between"><span>১৫:০০ - ১৮:০০</span><span>বিনোদনমূলক অনুষ্ঠান</span></div>
 //                 </div>
 //             </div>
-            
+
 //             <p class="text-sm text-gray-600">* সময়সূচী পরিবর্তনের অধিকার আয়োজক কমিটি সংরক্ষণ করে।</p>
 //         `
 //     },
@@ -545,34 +545,34 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 //         iconBg: 'bg-green-500',
 //         content: `
 //             <h4 class="text-lg font-semibold text-gray-900 mb-3">অনুষ্ঠান স্থলের বিবরণ</h4>
-//             <p class="mb-4">পুনর্মিলনী ২০২৬ এর বিভিন্ন কার্যক্রম নিম্নলিখিত স্থানসমূহে অনুষ্ঠিত হবে:</p>
-            
+//             <p class="mb-4">পুনর্মিলনী-২০২৬ এর বিভিন্ন কার্যক্রম নিম্নলিখিত স্থানসমূহে অনুষ্ঠিত হবে:</p>
+
 //             <div class="space-y-4">
 //                 <div class="border-l-4 border-green-500 pl-4">
 //                     <h5 class="font-semibold text-gray-900">মূল অনুষ্ঠান</h5>
 //                     <p class="text-gray-600">স্কুল প্রাঙ্গণ (মূল ভবন)</p>
 //                     <p class="text-sm text-gray-500">উদ্বোধনী, স্মৃতিচারণ, সমাপনী অনুষ্ঠান</p>
 //                 </div>
-                
+
 //                 <div class="border-l-4 border-blue-500 pl-4">
 //                     <h5 class="font-semibold text-gray-900">সাংস্কৃতিক অনুষ্ঠান</h5>
 //                     <p class="text-gray-600">স্বাধীন কমিউনিটি সেন্টার</p>
 //                     <p class="text-sm text-gray-500">গান, কবিতা, নাটক ও নৃত্য</p>
 //                 </div>
-                
+
 //                 <div class="border-l-4 border-orange-500 pl-4">
 //                     <h5 class="font-semibold text-gray-900">খাবার পরিবেশনা</h5>
 //                     <p class="text-gray-600">স্কুল ক্যান্টিন এলাকা</p>
 //                     <p class="text-sm text-gray-500">নাস্তা ও দুপুরের খাবার</p>
 //                 </div>
-                
+
 //                 <div class="border-l-4 border-purple-500 pl-4">
 //                     <h5 class="font-semibold text-gray-900">ক্রীড়া প্রতিযোগিতা</h5>
 //                     <p class="text-gray-600">স্কুল খেলার মাঠ</p>
 //                     <p class="text-sm text-gray-500">ফুটবল, ক্রিকেট ও অন্যান্য খেলা</p>
 //                 </div>
 //             </div>
-            
+
 //             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
 //                 <h5 class="font-semibold text-yellow-800 mb-2">পার্কিং ব্যবস্থা:</h5>
 //                 <p class="text-yellow-700">স্কুলের পাশের মাঠে গাড়ি পার্ক করার ব্যবস্থা রয়েছে। নিরাপত্তার জন্য দায়িত্বপ্রাপ্ত ব্যক্তি থাকবেন।</p>
@@ -641,7 +641,7 @@ function filterAlumni() {
     const nameSearch = document.getElementById('nameSearch').value.toLowerCase();
     const batchFilter = document.getElementById('batchFilter').value;
     const areaFilter = document.getElementById('areaFilter').value;
-    const cards = document.querySelectorAll('.show_more');   
+    const cards = document.querySelectorAll('.show_more');
 
     cards.forEach(card => {
         const name = card.dataset.name.toLowerCase();

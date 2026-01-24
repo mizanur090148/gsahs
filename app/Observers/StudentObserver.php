@@ -21,7 +21,7 @@ class StudentObserver
             $student->getOriginal('status') === 'pending' &&
             $student->status === 'active') {
 
-            $message = "অভিনন্দন! গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়ের গ্র্যান্ড পুনর্মিলনী - ২০২৬ এ আপনার নিবন্ধন সফল হয়েছে। পুনর্মিলনীতে আপনাকে স্বাগতম!";
+            $message = "অভিনন্দন! গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়ের গ্র্যান্ড পুনর্মিলনী-২০২৬ এ আপনার নিবন্ধন সফল হয়েছে। পুনর্মিলনীতে আপনাকে স্বাগতম!";
 
             // Use the actual student's phone number
             $this->smsService->sendSms($student->phone, $message);

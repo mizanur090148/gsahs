@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donation;
-use App\Models\Student;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\Student;
+use App\Models\Donation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
     public function index()
-    {
+    { dd(Hash::make('Password123!'));
         // Get latest news
         $news = [
             (object)[
@@ -23,7 +24,7 @@ class HomeController extends Controller
             ],
             (object)[
                 'id' => 2,
-                'title' => 'গ্র্যান্ড পুনর্মিলনী ২০২৬ রেজিস্ট্রেশন সংক্রান্ত নিয়মাবলি',
+                'title' => "গ্র্যান্ড পুনর্মিলনী-২০২৬ রেজিস্ট্রেশন সংক্রান্ত নিয়মাবলি",
                 'description' => 'পুনর্মিলনী নিয়মাবলী',
                 'image' => 'photos/1759986059_1759054600_favicon.png',
                 'category' => 'গুরুত্বপূর্ণ',

@@ -64,11 +64,6 @@
                         <i class="text-orange-400 fas fa-calendar"></i>
                         <span>কার্যক্রম</span>
                     </a>
-                    <a href="{{ route('expenses.index') }}"
-                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
-                        <i class="text-orange-400 fas fa-coins"></i>
-                        <span>আর্থিক হিসাব</span>
-                    </a>
                     <a href="{{ route('galary') }}"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-images"></i>
@@ -114,10 +109,6 @@
 
             <a href="{{ route('home') }}#events" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-calendar"></i><span>কার্যক্রম</span>
-            </a>
-
-            <a href="{{ route('expenses.index') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
-                <i class="text-orange-400 fas fa-coins"></i><span>আর্থিক হিসাব</span>
             </a>
 
             <a href="{{ route('galary') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
