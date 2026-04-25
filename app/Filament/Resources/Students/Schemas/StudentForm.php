@@ -17,6 +17,7 @@ class StudentForm
                     ->required(),
                 Select::make('batch')
                     ->options([
+                        2026 => '2026',
                         2025 => '2025',
                         2024 => '2024',
                         2023 => '2023',
@@ -106,7 +107,7 @@ class StudentForm
                 Select::make('payment_mode')
                     ->options([
                         'bkash' => 'বিকাশ',
-                        'nogod' => 'নগদ',
+                        'nagad' => 'নগদ',
                         'rocket' => 'রকেট',
                         'tap' => 'ট্যাপ',
                     ])

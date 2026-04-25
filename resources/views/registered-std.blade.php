@@ -128,7 +128,7 @@
                             <!-- Card Body -->
                             <div class="p-1 text-center">
                                 <h3
-                                    class="mt-2 mb-1 text-sm font-bold text-gray-900 transition-colors group-hover:text-blue-600">
+                                    class="mt-1 text-sm font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                                     {{ $alumnus->name }}
                                 </h3>
 
@@ -149,12 +149,12 @@
                                             <span class="truncate max-w-[220px]">{{ $alumnus->email }}</span>
                                         </div>
                                     @endif
-                                    {{-- @if ($alumnus->tshirt)
+                                    @if ($alumnus->tshirt)
                                         <div class="flex items-center justify-center">
                                             <i class="mr-1 fas fa-t-shirt"></i>
                                             <span class="truncate max-w-[220px]">{{ $alumnus->tshirt }}</span>
                                         </div>
-                                    @endif --}}
+                                    @endif
                                     <div class="flex items-center justify-center">
                                         <span
                                             class="px-3 py-1 text-xs font-semibold text-white {{ $alumnus->status === 'active' ? 'bg-green-600' : 'bg-yellow-500' }} rounded-full">

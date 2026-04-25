@@ -182,7 +182,7 @@
                     <h4 class="mb-2 font-bold">যোগাযোগের তথ্য</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="text-gray-400"><i class="mr-2 fas fa-phone"></i>01610333033, 01327168909,
-                            01309128414</li>
+                            01718822094</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-envelope"></i>reunion.gsahs@gmail.com</li>
                         <li class="text-gray-400"><i class="mr-2 fas fa-map-marker-alt"></i>গোটিয়া, মেছড়া, সিরাজগঞ্জ
                         </li>

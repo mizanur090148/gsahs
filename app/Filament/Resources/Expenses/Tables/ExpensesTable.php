@@ -39,8 +39,10 @@ class ExpensesTable
                     ->disk('public')
                     ->width(60)
                     ->height(60)
-                    ->label('ভাউচার'),
-
+                    ->label('ভাউচার')
+                    ->getStateUsing(fn ($record) =>
+                        asset('storage/' . $record->voucher)
+                    ),
                 TextColumn::make('description')
                     ->limit(50)
                     ->label('বিবরণ')

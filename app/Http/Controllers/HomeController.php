@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\Student;
 use App\Models\Donation;
+use App\Models\Student;
+use App\Models\Expense;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
     public function index()
-    { dd(Hash::make('Password123!'));
+    {
         // Get latest news
         $news = [
             (object)[
                 'id' => 1,
-                'title' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ মার্চ ২০২৬ ইংরেজী পর্যন্ত',
-                'description' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩১ মার্চ ২০২৬ ইংরেজী পর্যন্ত',
+                'title' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩০ শে এপ্রিল ২০২৬ ইংরেজী পর্যন্ত',
+                'description' => 'রেজিস্ট্রেশনের শেষ তারিখ: ৩০ শে এপ্রিল ২০২৬ ইংরেজী পর্যন্ত',
                 'image' => 'photos/1766501816_Screenshot_1.png',
                 'category' => 'গুরুত্বপূর্ণ',
                 'created_at' => now()->subDay(),
@@ -58,20 +58,31 @@ class HomeController extends Controller
 
         $studentCount = Student::count();
         $relativesCount = Student::sum('participant_count') - $studentCount;
-        $totalFee = Student::sum('amount');
-        $totalDonation = Donation::sum('amount');
+        $totalFee = Student::where('status', 'active')->sum('amount');
+        
+        $activeStudentCount = Student::where('status', 'active')->count();
+        $activeRelativesCount = Student::where('status', 'active')->sum('participant_count') - $activeStudentCount;
+        
+        $totalFee = $totalFee - $activeStudentCount * 15 - $activeRelativesCount * 9;
+        
+        $totalDonation = (int) Donation::sum('amount');
+        if ($totalDonation > 0) {
+            $totalDonation -= (int) ($totalDonation * 1.5 / 100);
+        }
+        
         $totalCollectedMoney = $totalFee + $totalDonation;
+        $totalExpense = (int) Expense::sum('amount');
 
         $today = Carbon::today();
-        $endDate = Carbon::create($today->year, 3, 31);
+        $endDate = Carbon::create($today->year, 4, 30);
 
         // যদি আজ 31 মার্চ পার হয়ে যায় → next year
         if ($today->gt($endDate)) {
-            $endDate = Carbon::create($today->year + 1, 3, 31);
+            $endDate = Carbon::create($today->year + 1, 4, 20);
         }
 
         $daysRemaining = $today->diffInDays($endDate);
 
-        return view('home', compact('news', 'daysRemaining', 'totalCollectedMoney', 'sponsors', 'studentCount', 'relativesCount', 'totalFee', 'totalDonation'));
+        return view('home', compact('news', 'daysRemaining', 'totalCollectedMoney', 'sponsors', 'studentCount', 'relativesCount', 'totalFee', 'totalDonation', 'totalExpense'));
     }
 }

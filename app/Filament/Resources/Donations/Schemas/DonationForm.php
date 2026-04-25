@@ -21,8 +21,8 @@ class DonationForm
                 TextInput::make('amount')
                     ->required()
                     ->numeric(),
-                TextInput::make('photo'),
-                TextInput::make('document'),
+                //TextInput::make('photo'),
+                //TextInput::make('document'),
 
             ]);
     }

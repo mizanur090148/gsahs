@@ -33,12 +33,23 @@ class DonationsTable
                     ->disk('public')
                     ->width(60)
                     ->height(60)
-                    ->label('Photo'),
+                    ->label('Photo')
+                    ->getStateUsing(fn ($record) =>
+                        asset('storage/' . $record->photo)
+                    ),
                 ImageColumn::make('document')
                     ->disk('public')
                     ->width(60)
                     ->height(60)
                     ->label('Payment Proof'),
+                ImageColumn::make('document')
+                    ->label('Payment Proof')
+                    ->disk('public')
+                    ->width(60)
+                    ->height(60)
+                    ->getStateUsing(fn ($record) =>
+                        asset('storage/' . $record->document)
+                    ),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

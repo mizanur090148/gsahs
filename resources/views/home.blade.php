@@ -256,7 +256,7 @@
                                             class="text-red-500">*</span></label>
                                     <select name="batch" class="form-input">
                                         <option value="">এসএসসি ব্যাচ সিলেক্ট করুন</option>
-                                        @for ($year = 2025; $year >= 1982; $year--)
+                                        @for ($year = 2026; $year >= 1982; $year--)
                                             <option value="{{ $year }}"
                                                 {{ old('batch') == $year ? 'selected' : '' }}>{{ $year }}</option>
                                         @endfor
@@ -346,7 +346,7 @@
                             <label class="block mb-2 font-semibold text-gray-700">পেমেন্ট মোড<span
                                     class="text-red-500">*</span></label>
                             <div class="grid grid-cols-2 gap-3 md:grid-cols-6">
-                                @foreach (['বিকাশ' => 'bkash', 'নগদ' => 'nogod', 'রকেট' => 'rocket', 'ট্যাপ' => 'tap'] as $key => $size)
+                                @foreach (['বিকাশ' => 'bkash', 'নগদ' => 'nagad', 'রকেট' => 'rocket', 'ট্যাপ' => 'tap'] as $key => $size)
                                     <label
                                         class="flex items-center justify-center p-1 transition-colors border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500">
                                         <input type="radio" name="payment_mode" value="{{ $size }}"
@@ -447,13 +447,13 @@
 
                     <div class="p-8 text-center border border-red-200 bg-red-50 rounded-2xl">
                         <div class="mb-2 text-sm text-red-600">মোট ব্যয়</div>
-                        <div class="mb-2 text-2xl font-bold text-red-600">0</div>
+                        <div class="mb-2 text-2xl font-bold text-red-600">{{$totalExpense}}</div>
                         <div class="text-sm text-red-600">টাকা</div>
                     </div>
 
                     <div class="p-8 text-center border border-blue-200 bg-blue-50 rounded-2xl">
                         <div class="mb-2 text-sm text-blue-600">উদ্বৃত্ত</div>
-                        <div class="mb-2 text-2xl font-bold text-blue-600">{{ $totalCollectedMoney }}</div>
+                        <div class="mb-2 text-2xl font-bold text-blue-600">{{ $totalCollectedMoney - $totalExpense }}</div>
                         <div class="text-sm text-blue-600">টাকা</div>
                     </div>
                 </div>
@@ -544,7 +544,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <h3 class="mb-2 text-xl font-bold text-white"> যোগাযোগ</h3>
-                            <p class="text-purple-100">01610333033, 01327168909, 01309128414</p>
+                            <p class="text-purple-100">01610333033, 01327168909, 01718822094</p>
                         </div>
 
                         <div class="border contact-card bg-white/10 backdrop-blur-lg border-white/20">

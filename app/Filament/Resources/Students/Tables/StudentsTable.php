@@ -24,16 +24,42 @@ class StudentsTable
                     ->sortable(),
                 TextColumn::make('father_name')
                     ->searchable(),
+                TextColumn::make('status')
+                    ->badge()
+                    ->default('pending')
+                    ->color(fn ($state) => match ($state) {
+                        'pending' => 'warning',
+                        'cancelled' => 'danger',
+                        'active' => 'success',
+                        default => 'gray',
+                    }),
+                TextColumn::make('registration_type')
+                    ->badge()
+                    ->default('single')
+                    ->color(fn ($state) => match ($state) {
+                        'single' => 'warning',
+                        default => 'success',
+                    }),
+                TextColumn::make('participant_count')
+                    ->numeric()
+                    ->sortable()
+                    ->default(0),
                 ImageColumn::make('photo')
                     ->disk('public')
                     ->width(60)
                     ->height(60)
-                    ->circular(),
+                    ->circular()
+                    ->getStateUsing(fn ($record) =>
+                        asset('storage/' . $record->photo)
+                    ),
                 ImageColumn::make('screenshot')
                     ->disk('public')
                     ->width(60)
                     ->height(60)
-                    ->label('Payment Proof'),
+                    ->label('Payment Proof')
+                    ->getStateUsing(fn ($record) =>
+                        asset('storage/' . $record->screenshot)
+                    ),
                 TextColumn::make('tshirt')
                     ->searchable(),
                 TextColumn::make('phone')
@@ -46,16 +72,9 @@ class StudentsTable
                 TextColumn::make('present_address')
                     ->searchable()
                     ->default('-'),
-                TextColumn::make('registration_type')
-                    ->badge()
-                    ->default('single'),
                 TextColumn::make('sent_to')
                     ->searchable()
                     ->default('-'),
-                TextColumn::make('participant_count')
-                    ->numeric()
-                    ->sortable()
-                    ->default(0),
                 TextColumn::make('sent_from')
                     ->searchable()
                     ->default('-'),
@@ -63,9 +82,6 @@ class StudentsTable
                     ->label('Amount')
                     ->numeric(decimalPlaces: 2)
                     ->default(0),
-                TextColumn::make('status')
-                    ->badge()
-                    ->default('pending'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -83,6 +99,7 @@ class StudentsTable
             ->filters([
                 SelectFilter::make('batch')
                     ->options([
+                        2026 => '2026',
                         2025 => '2025',
                         2024 => '2024',
                         2023 => '2023',
