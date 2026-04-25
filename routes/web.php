@@ -6,6 +6,9 @@ use App\Http\Controllers\{AccountController, NewsAndGallaryController, AlumniCon
 // Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// About Page
+Route::view('/about', 'about')->name('about');
+
 // Student Registration
 Route::prefix('students')->group(function () {
     Route::get('/', [StudentController::class, 'index'])->name('students.index');

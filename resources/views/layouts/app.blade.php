@@ -49,6 +49,11 @@
                         <i class="text-orange-400 fas fa-home"></i>
                         <span>হোম</span>
                     </a>
+                    <a href="{{ route('about') }}"
+                        class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
+                        <i class="text-orange-400 fas fa-info-circle"></i>
+                        <span>পরিচিতি</span>
+                    </a>
                     <a href="{{ route('home') }}#registration"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-user-plus"></i>
@@ -77,7 +82,7 @@
                     <a href="{{ route('blogs.index') }}"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-blog"></i>
-                        <span>গল্প</span>
+                        <span>স্মৃতিচারণ</span>
                     </a>
                 </nav>
                 <!-- Action Buttons (Desktop) -->
@@ -102,6 +107,9 @@
             class="flex flex-col hidden px-6 py-4 space-y-3 text-white transition-all duration-300 lg:hidden bg-black/90">
             <a href="{{ route('home') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-home"></i><span>হোম</span>
+            </a>
+            <a href="{{ route('about') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
+                <i class="text-orange-400 fas fa-info-circle"></i><span>পরিচিতি</span>
             </a>
             <a href="{{ route('home') }}#registration"
                 class="flex items-center py-2 space-x-2 border-b border-gray-700">
