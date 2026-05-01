@@ -10,10 +10,13 @@ class ListDonations extends ListRecords
 {
     protected static string $resource = DonationResource::class;
 
+    protected static ?string $title = 'ডোনেশন সমূহ';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('নতুন ডোনেশন'),
         ];
     }
 }

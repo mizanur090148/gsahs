@@ -63,11 +63,27 @@
                             @enderror
                         </div>
                         <div>
-                            <label class="block mb-1 font-semibold text-gray-700">মোবাইল নম্বর <span
+                            <label class="block mb-1 font-semibold text-gray-700">যে নাম্বার থেকে টাকা পাঠানো হয়েছে <span
                                     class="text-red-500">*</span></label>
                             <input name="mobile" value="{{ old('mobile') }}" type="tel"
                                 class="w-full px-4 py-2 border rounded-lg form-input" placeholder="০১৭xxxxxxxx">
                             @error('mobile')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div>
+                            <label class="block mb-1 font-semibold text-gray-700">যে নাম্বারে টাকা পাঠানো হয়েছে <span
+                                    class="text-red-500">*</span></label>
+                            <select name="receiver_mobile" class="w-full px-4 py-2 border rounded-lg form-input">
+                                <option value="">নাম্বার নির্বাচন করুন</option>
+                                <option value="01610333033"
+                                    {{ old('receiver_mobile') == '01610333033' ? 'selected' : '' }}>01610333033
+                                </option>
+                                <option value="01718822094"
+                                    {{ old('receiver_mobile') == '01718822094' ? 'selected' : '' }}>01718822094
+                                </option>
+                            </select>
+                            @error('receiver_mobile')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
                             @enderror
                         </div>

@@ -12,6 +12,10 @@ class StudentExporter
 {
     public static function export()
     {
+        // Increase memory limit temporarily for export
+        $originalMemoryLimit = ini_get('memory_limit');
+        ini_set('memory_limit', '1024M');
+        
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
@@ -33,14 +37,18 @@ class StudentExporter
         // Set row height for headers
         $sheet->getRowDimension(1)->setRowHeight(20);
 
-        // Get students ordered by batch and id
-        $students = Student::orderBy('batch', 'asc')->orderBy('id', 'asc')->get();
+        // First pass: Get only IDs to calculate batch-wise numbering without loading all data
+        $studentIdsBatches = Student::where('status', 'active')
+            ->orderBy('batch', 'asc')
+            ->orderBy('id', 'asc')
+            ->select('id', 'batch')
+            ->get();
 
         // Group students by batch and create batch-wise IDs
         $batchCounts = [];
         $studentIds = [];
 
-        foreach ($students as $student) {
+        foreach ($studentIdsBatches as $student) {
             $batch = $student->batch;
             if (!isset($batchCounts[$batch])) {
                 $batchCounts[$batch] = 0;
@@ -48,10 +56,21 @@ class StudentExporter
             $batchCounts[$batch]++;
             $studentIds[$student->id] = $batch . '-' . str_pad($batchCounts[$batch], 2, '0', STR_PAD_LEFT);
         }
+        
+        // Free memory
+        unset($studentIdsBatches);
+        unset($batchCounts);
 
         $row = 2;
+        $totalParticipantCount = 0;
+        $totalAmount = 0;
 
-        foreach ($students as $student) {
+        // Process students in chunks to avoid memory issues
+        Student::where('status', 'active')
+            ->orderBy('batch', 'asc')
+            ->orderBy('id', 'asc')
+            ->chunk(50, function ($students) use ($sheet, $studentIds, &$row, &$totalParticipantCount, &$totalAmount) {
+                foreach ($students as $student) {
             // Set row height for images
             $sheet->getRowDimension($row)->setRowHeight(60);
 
@@ -62,7 +81,7 @@ class StudentExporter
             // Photo image (Column C)
             if ($student->photo) {
                 $photoPath = Storage::disk('public')->path($student->photo);
-                if (file_exists($photoPath)) {
+                if (file_exists($photoPath) && filesize($photoPath) < 5242880) { // Skip if > 5MB
                     try {
                         $drawing = new Drawing();
                         $drawing->setName('Photo');
@@ -82,7 +101,7 @@ class StudentExporter
             // Screenshot image (Column D)
             if ($student->screenshot) {
                 $screenshotPath = Storage::disk('public')->path($student->screenshot);
-                if (file_exists($screenshotPath)) {
+                if (file_exists($screenshotPath) && filesize($screenshotPath) < 5242880) { // Skip if > 5MB
                     try {
                         $drawing = new Drawing();
                         $drawing->setName('Screenshot');
@@ -106,14 +125,41 @@ class StudentExporter
             $sheet->setCellValue('I' . $row, $student->tshirt);
             $sheet->setCellValue('J' . $row, $student->registration_type);
             $sheet->setCellValue('K' . $row, $student->participant_count);
-            $sheet->setCellValue('L' . $row, $student->amount);
+            
+            // Calculate adjusted amount based on participant count
+            $participantCount = $student->participant_count ?? 1;
+            $discount = 15 + ($participantCount - 1) * 9;
+            $adjustedAmount = $student->amount - $discount;
+            
+            // Add to totals
+            $totalParticipantCount += $participantCount;
+            $totalAmount += $adjustedAmount;
+            
+            $sheet->setCellValue('L' . $row, $adjustedAmount);
             $sheet->setCellValue('M' . $row, $student->payment_mode);
             $sheet->setCellValue('N' . $row, $student->sent_to);
             $sheet->setCellValue('O' . $row, $student->sent_from);
             $sheet->setCellValue('P' . $row, $student->status);
 
             $row++;
-        }
+                }
+                
+                // Free memory after each chunk
+                gc_collect_cycles();
+            });
+
+        // Add summary row
+        $summaryRow = $row;
+        $sheet->setCellValue('J' . $summaryRow, 'TOTAL:');
+        $sheet->setCellValue('K' . $summaryRow, $totalParticipantCount);
+        $sheet->setCellValue('L' . $summaryRow, $totalAmount);
+        
+        // Style the summary row
+        $sheet->getStyle('J' . $summaryRow . ':L' . $summaryRow)->getFont()->setBold(true);
+        $sheet->getStyle('J' . $summaryRow . ':L' . $summaryRow)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FFE8F5E9');
+        $sheet->getRowDimension($summaryRow)->setRowHeight(25);
 
         // Auto-size columns except image columns
         foreach (range('A', 'P') as $col) {
@@ -136,6 +182,14 @@ class StudentExporter
 
         $writer = new Xlsx($spreadsheet);
         $writer->save($tempPath);
+
+        // Restore original memory limit
+        ini_set('memory_limit', $originalMemoryLimit);
+        
+        // Clean up
+        $spreadsheet->disconnectWorksheets();
+        unset($spreadsheet);
+        gc_collect_cycles();
 
         return response()->download($tempPath, $fileName)->deleteFileAfterSend(true);
     }

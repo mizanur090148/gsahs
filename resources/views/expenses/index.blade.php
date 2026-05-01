@@ -70,9 +70,7 @@
                                         <th
                                             class="px-6 py-4 text-sm font-bold text-left text-gray-700 uppercase whitespace-nowrap">
                                             উদ্দেশ্য</th>
-                                        <th
-                                            class="px-6 py-4 text-sm font-bold text-left text-gray-700 uppercase whitespace-nowrap">
-                                            পরিমাণ (৳)</th>
+                                       
                                         <th
                                             class="px-6 py-4 text-sm font-bold text-left text-gray-700 uppercase whitespace-nowrap">
                                             যিনি ব্যয় করেছেন</th>
@@ -85,6 +83,9 @@
                                         <th
                                             class="px-6 py-4 text-sm font-bold text-left text-gray-700 uppercase whitespace-nowrap">
                                             তারিখ</th>
+                                         <th
+                                            class="px-6 py-4 text-sm font-bold text-left text-gray-700 uppercase whitespace-nowrap">
+                                            পরিমাণ (৳)</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200">
@@ -96,9 +97,7 @@
                                             <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                                                 {{ $expense->purpose }}
                                             </td>
-                                            <td class="px-6 py-4 text-sm font-semibold text-red-600 whitespace-nowrap">
-                                                ৳{{ number_format($expense->amount, 2) }}
-                                            </td>
+                                            
                                             <td class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
                                                 {{ $expense->by_whom ?? 'N/A' }}
                                             </td>
@@ -119,17 +118,19 @@
                                             <td class="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
                                                 {{ $expense->created_at->format('d M Y') }}
                                             </td>
+                                            <td class="px-6 py-4 text-sm font-semibold text-red-600 whitespace-nowrap">
+                                                ৳{{ number_format($expense->amount, 2) }}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr
                                         class="font-bold border-t-2 border-gray-300 bg-gradient-to-r from-red-50 to-orange-50">
-                                        <td colspan="2" class="px-6 py-4 text-right text-gray-800">সর্বমোট:</td>
+                                        <td colspan="5" class="px-6 py-4 text-right text-gray-800">সর্বমোট:</td>
                                         <td class="px-6 py-4 text-lg text-red-600">
                                             ৳{{ number_format($totalExpense, 2) }}
                                         </td>
-                                        <td colspan="4"></td>
                                     </tr>
                                 </tfoot>
                             </table>

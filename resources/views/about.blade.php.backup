@@ -1,0 +1,129 @@
+@extends('layouts.app')
+
+@section('title', 'পরিচিতি - গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়')
+@section('description', 'গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়ের পরিচিতি এবং বিস্তারিত তথ্য')
+
+@section('content')
+    <!-- Header Section with Design -->
+    <div class="mt-16">
+        <!-- Dark Red Top Section -->
+        <div class="relative bg-red-700 h-32 overflow-hidden">
+            <svg class="absolute bottom-0 w-full h-auto transform" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid slice">
+                <path d="M0,40 Q300,60 600,40 T1200,40 L1200,100 L0,100 Z" fill="#e0d5e3" />
+            </svg>
+        </div>
+
+        <!-- Light Gray Content Section with Diagonal Top -->
+        <div class="relative bg-gray-100 pb-12">
+            <div class="px-6 mx-auto max-w-5xl -mt-8 relative z-10">
+                <!-- School Title -->
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়
+                    </h1>
+                </div>
+
+                <!-- Institution Details -->
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <!-- Location & Founding -->
+                    <div class="mb-4 text-gray-700">
+                        <p class="text-lg mb-2">
+                            <span class="font-semibold">স্থাবর :</span> গোটিয়া, উপজেলা ও জেলা : সিরাজগঞ্জ ।
+                        </p>
+                        <p class="text-lg mb-2">
+                            <span class="font-semibold">স্থাপিত :</span> ১৯৮২
+                        </p>
+                    </div>
+
+                    <!-- Institutional Codes -->
+                    <div class="mb-4 text-gray-700">
+                        <p class="text-lg mb-2">
+                            কেন্দ্র কোড- সিরাজগঞ্জ ৩৫০ সি, উপজেলা কোড-৩৫০১, জেলা কোড-৩৫
+                        </p>
+                        <p class="text-lg mb-4">
+                            <span class="font-semibold">EIIN :</span> ১২৮৪১৪ বিদ্যালয় কোড-৭৭২
+                        </p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="pt-4 border-t border-gray-300 text-gray-700">
+                        <p class="text-sm md:text-base">
+                            <span class="font-semibold">ই-মেইল :</span> gotiashamsher128414@gmail.com মোবাইল : ০১৩০৯-১২৮৪১৪, ০১৯৩-৮৮২৩২০
+                        </p>
+                    </div>
+
+                    <!-- Signature Line -->
+                    <div class="mt-6 text-right text-gray-600 text-sm">
+                        <span class="inline-block border-t border-gray-400 pt-1 px-2">অধিক্ষক</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-12 bg-white">
+        <div class="px-6 mx-auto max-w-5xl">
+            <div class="bg-white rounded-lg">
+                <!-- School Logo and Name -->
+                <div class="flex flex-col items-center mb-12 text-center">
+                    <img src="{{ asset('assets/images/logo.jpeg') }}" alt="School Logo"
+                        class="w-28 h-28 mb-6 shadow-lg rounded-lg object-cover">
+                    <h2 class="mb-2 text-2xl font-bold text-gray-800">গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</h2>
+                    <p class="text-lg text-gray-600">Gotia Samsher Ali High School</p>
+                </div>
+
+                <!-- School Information -->
+                    <div class="grid gap-6 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
+                        <!-- Left Column -->
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">বিদ্যালয়ের EIIN: 128414</span> </p>
+                            <p><span class="font-semibold">বিদ্যালয়ের নাম:</span> গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</p>
+                            <p><span class="font-semibold">School Name:</span> Gotia Samsher Ali High School</p>
+                            <p><span class="font-semibold">গ্রাম:</span> গোটিয়া</p>
+                            <p><span class="font-semibold">ওয়ার্ড: ০৬</span> </p>
+                            <p><span class="font-semibold">ইউনিয়ন:</span> মেছড়া</p>
+                            <p><span class="font-semibold">পোষ্ট অফিস:</span> গোটিয়া</p>
+                            <p><span class="font-semibold">উপজেলা:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">জেলা:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">পুলিশ স্টেশন:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">বিভাগ:</span> রাজশাহী</p>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">ই-মেইল:</span> gotiashamsher128414@gmail.com</p>
+                            <p><span class="font-semibold">টেলিফোন: 01309-128414</span> </p>
+                            <p><span class="font-semibold">website:</span> <a href="http://www.gotiahighschool.com"
+                                    target="_blank" class="text-blue-600 hover:underline">www.gotiahighschool.com</a></p>
+                            <p><span class="font-semibold">শিক্ষার্থীর সংখ্যা:</span> ১৯০</p>
+                            <p><span class="font-semibold">বিদ্যালয়ের শিফট:</span> এক শিফট</p>
+                            <p><span class="font-semibold">বিদ্যালয়ের ধরণ:</span> সহশিক্ষা</p>
+                            <p><span class="font-semibold">মোট জমির পরিমাণ:</span> ৩.৪০ একর</p>
+                            <p><span class="font-semibold">মোট শ্রেণী কক্ষ:</span> ১৪</p>
+                            <p><span class="font-semibold">আইসিটি ল্যাব:</span> নাই</p>
+                            <p><span class="font-semibold">পাঠাগারের জন্য কক্ষ:</span> ১৩</p>
+                            <p><span class="font-semibold">ভবন সংখ্যা:</span> ০২</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="p-6 mt-12 text-center bg-gradient-to-r from-red-100 to-pink-100 rounded-lg">
+                        <h3 class="mb-4 text-2xl font-bold text-gray-800">আরও তথ্যের জন্য যোগাযোগ করুন</h3>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="{{ route('home') }}#contact"
+                                class="inline-flex items-center px-6 py-3 font-semibold text-white transition-all duration-300 shadow-lg bg-red-600 hover:bg-red-700 rounded-lg hover:shadow-xl hover:scale-105">
+                                <i class="mr-2 fas fa-phone"></i> যোগাযোগ করুন
+                            </a>
+                            <a href="{{ route('home') }}"
+                                class="inline-flex items-center px-6 py-3 font-semibold text-gray-700 transition-all duration-300 bg-white shadow-lg hover:bg-gray-50 rounded-lg hover:shadow-xl hover:scale-105">
+                                <i class="mr-2 fas fa-home"></i> হোম পেজে ফিরে যান
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection

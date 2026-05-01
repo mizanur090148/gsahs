@@ -10,10 +10,18 @@ class EditDonation extends EditRecord
 {
     protected static string $resource = DonationResource::class;
 
+    protected static ?string $title = 'ডোনেশন এডিট';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('ডিলিট'),
         ];
+    }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

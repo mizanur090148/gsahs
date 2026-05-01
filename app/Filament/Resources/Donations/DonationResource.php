@@ -20,9 +20,15 @@ class DonationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCurrencyDollar;
 
-    protected static ?string $recordTitleAttribute = 'Donation';
+    protected static ?string $navigationLabel = 'ডোনেশন';
 
-     protected static ?int $navigationSort = 2;
+    protected static ?string $modelLabel = 'ডোনেশন';
+
+    protected static ?string $pluralModelLabel = 'ডোনেশন সমূহ';
+
+    protected static ?string $recordTitleAttribute = 'name';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {

@@ -87,14 +87,15 @@
                 </nav>
                 <!-- Action Buttons (Desktop) -->
                 <div class="items-center hidden space-x-4 lg:flex">
+                    <a href="{{ route('donations.list') }}"
+                        class="inline-flex items-center px-5 py-2 font-semibold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 rounded-xl hover:shadow-xl hover:scale-105">
+                        <i class="mr-2 fa-solid fa-hand-holding-dollar"></i> ডোনেশন
+                    </a>
                     <a href="{{ route('home') }}#contact"
                         class="inline-flex items-center px-5 py-2 font-semibold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl hover:shadow-xl hover:scale-105">
                         <i class="mr-2 fas fa-phone"></i> যোগাযোগ
                     </a>
-                    <a onclick="showDonationModal()"
-                        class="inline-flex items-center px-5 py-2 font-semibold text-white transition-all duration-300 shadow-lg cursor-pointer bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 hover:from-orange-600 hover:via-red-600 hover:to-pink-700 rounded-xl hover:shadow-xl hover:scale-105">
-                        <i class="mr-2 fa-solid fa-hand-holding-dollar"></i> ডোনেশন
-                    </a>
+                    
                 </div>
                 <!-- Mobile Hamburger -->
                 <button id="menu-btn" class="text-2xl text-white lg:hidden focus:outline-none">
@@ -141,8 +142,8 @@
                 class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:scale-105">
                 <i class="mr-2 fas fa-phone"></i> যোগাযোগ
             </a>
-            <a onclick="showDonationModal()"
-                class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg cursor-pointer bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-xl hover:scale-105">
+            <a href="{{ route('donations.list') }}"
+                class="inline-flex items-center px-5 py-2 font-semibold text-white shadow-lg bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-xl hover:scale-105">
                 <i class="mr-2 fa-solid fa-hand-holding-dollar"></i> ডোনেশন
             </a>
         </div>

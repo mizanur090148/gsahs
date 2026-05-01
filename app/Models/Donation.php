@@ -14,6 +14,7 @@ class Donation extends Model
         'name',
         'father_name',
         'mobile',
+        'receiver_mobile',
         'address',
         'amount',
         'photo',

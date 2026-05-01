@@ -12,12 +12,19 @@ class DonationController extends Controller
         return view('donations.index');
     }
 
+    public function list()
+    {
+        $donations = Donation::orderBy('created_at', 'desc')->get();
+        return view('donations.list', compact('donations'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
             'mobile' => 'required|string|max:20',
+            'receiver_mobile' => 'required|string|max:20',
             'address' => 'required|string|max:255',
             'amount' => 'required|numeric',
             'photo' => 'nullable|image|max:2048',
@@ -35,9 +42,12 @@ class DonationController extends Controller
             $validated['document'] = $documentPath;
         }
 
+        // Set default status as pending
+        $validated['status'] = 'pending';
+
         Donation::create($validated);
 
-        return redirect()->route('home')
-            ->with('success', 'আপনার ডোনেশন সফলভাবে সম্পন্ন হয়েছে!');
+        return redirect()->route('donations.list')
+            ->with('success', 'আপনার ডোনেশন সফলভাবে সম্পন্ন হয়েছে! এটি অনুমোদনের অপেক্ষায় রয়েছে।');
     }
 }

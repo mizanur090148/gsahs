@@ -62,3 +62,6 @@ Route::prefix('donate')->group(function () {
     Route::get('/', [DonationController::class, 'index'])->name('donate.index');
     Route::post('/', [DonationController::class, 'store'])->name('donate.store');
 });
+
+// Donations List
+Route::get('/donations', [DonationController::class, 'list'])->name('donations.list');

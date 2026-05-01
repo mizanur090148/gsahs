@@ -81,7 +81,12 @@ class StudentsTable
                 TextColumn::make('amount')
                     ->label('Amount')
                     ->numeric(decimalPlaces: 2)
-                    ->default(0),
+                    ->default(0)
+                    ->formatStateUsing(function ($record) {
+                        $participantCount = $record->participant_count ?? 1;
+                        $discount = 15 + ($participantCount - 1) * 9;
+                        return $record->amount - $discount;
+                    }),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
