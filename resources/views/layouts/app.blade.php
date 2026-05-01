@@ -54,11 +54,11 @@
                         <i class="text-orange-400 fas fa-info-circle"></i>
                         <span>পরিচিতি</span>
                     </a>
-                    <a href="{{ route('home') }}#registration"
+                    {{-- <a href="{{ route('home') }}#registration"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-user-plus"></i>
                         <span>নিবন্ধন</span>
-                    </a>
+                    </a> --}}
                     <a href="{{ route('registered-students.index') }}"
                         class="flex items-center px-4 py-2 space-x-2 font-medium text-white transition-all duration-300 rounded-xl hover:bg-white/10">
                         <i class="text-orange-400 fas fa-users"></i>
@@ -111,10 +111,10 @@
             <a href="{{ route('about') }}" class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-info-circle"></i><span>পরিচিতি</span>
             </a>
-            <a href="{{ route('home') }}#registration"
+            {{-- <a href="{{ route('home') }}#registration"
                 class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-user-plus"></i><span>নিবন্ধন</span>
-            </a>
+            </a> --}}
             <a href="{{ route('registered-students.index') }}"
                 class="flex items-center py-2 space-x-2 border-b border-gray-700">
                 <i class="text-orange-400 fas fa-users"></i><span>নিবন্ধনকৃত শিক্ষার্থী</span>

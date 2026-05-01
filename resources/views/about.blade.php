@@ -30,245 +30,36 @@
                     </div>
 
                     <!-- School Information -->
-                    <div class="grid gap-6 md:grid-cols-2">
+                    <div class="grid gap-6 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
                         <!-- Left Column -->
-                        <div class="space-y-4">
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-id-card"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">বিদ্যালয়ের EIIN:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">বিদ্যালয়ের নাম:</p>
-                                    <p class="text-gray-600">গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">গ্রাম:</p>
-                                    <p class="text-gray-600">গোটিয়া</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">ওয়ার্ড:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-location-arrow"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">ইউনিয়ন:</p>
-                                    <p class="text-gray-600">মেছড়া</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-mail-bulk"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">পোষ্ট অফিস:</p>
-                                    <p class="text-gray-600">গোটিয়া</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-city"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">উপজেলা:</p>
-                                    <p class="text-gray-600">সিরাজগঞ্জ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-map"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">জেলা:</p>
-                                    <p class="text-gray-600">সিরাজগঞ্জ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">পুলিশ স্টেশন:</p>
-                                    <p class="text-gray-600">সিরাজগঞ্জ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-purple-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-purple-600 rounded-lg">
-                                    <i class="fas fa-flag"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">বিভাগ:</p>
-                                    <p class="text-gray-600">রাজশাহী</p>
-                                </div>
-                            </div>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">বিদ্যালয়ের EIIN: 128414</span> </p>
+                            <p><span class="font-semibold">বিদ্যালয়ের নাম:</span> গোটিয়া শোমসের আলী উচ্চ বিদ্যালয়</p>
+                            <p><span class="font-semibold">School Name:</span> Gotia Samsher Ali High School</p>
+                            <p><span class="font-semibold">গ্রাম:</span> গোটিয়া</p>
+                            <p><span class="font-semibold">ওয়ার্ড: ০৬</span> </p>
+                            <p><span class="font-semibold">ইউনিয়ন:</span> মেছড়া</p>
+                            <p><span class="font-semibold">পোষ্ট অফিস:</span> গোটিয়া</p>
+                            <p><span class="font-semibold">উপজেলা:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">জেলা:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">পুলিশ স্টেশন:</span> সিরাজগঞ্জ</p>
+                            <p><span class="font-semibold">বিভাগ:</span> রাজশাহী</p>
                         </div>
 
                         <!-- Right Column -->
-                        <div class="space-y-4">
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">ইমেইল:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">টেলিফোন:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">ওয়েবসাইট:</p>
-                                    <p class="text-gray-600">
-                                        <a href="http://www.gotiahighschool.com" target="_blank"
-                                            class="text-blue-600 hover:underline">www.gotiahighschool.com</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">শিক্ষার্থীর সংখ্যা:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">বিদ্যালয়ের শিফট:</p>
-                                    <p class="text-gray-600">এক শিফট</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-user-graduate"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">বিদ্যালয়ের ধরণ:</p>
-                                    <p class="text-gray-600">সহশিক্ষা</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-ruler-combined"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">মোট জমির পরিমাণ:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-door-open"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">মোট শ্রেণী কক্ষ:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-laptop"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">আইসিটি ল্যাব:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">পাঠাগারের জন্য কক্ষ:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start p-4 transition-all duration-300 rounded-xl hover:bg-pink-50">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 text-white bg-pink-600 rounded-lg">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">ভবন সংখ্যা:</p>
-                                    <p class="text-gray-600">-</p>
-                                </div>
-                            </div>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">ই-মেইল:</span> gotiashamsher128414@gmail.com</p>
+                            <p><span class="font-semibold">টেলিফোন: 01309-128414</span> </p>
+                            <p><span class="font-semibold">website:</span> <a href="http://www.gotiahighschool.com"
+                                    target="_blank" class="text-blue-600 hover:underline">www.gotiahighschool.com</a></p>
+                            <p><span class="font-semibold">শিক্ষার্থীর সংখ্যা:</span> ১৯০</p>
+                            <p><span class="font-semibold">বিদ্যালয়ের শিফট:</span> এক শিফট</p>
+                            <p><span class="font-semibold">বিদ্যালয়ের ধরণ:</span> সহশিক্ষা</p>
+                            <p><span class="font-semibold">মোট জমির পরিমাণ:</span> ৩.৪০ একর</p>
+                            <p><span class="font-semibold">মোট শ্রেণী কক্ষ:</span> ১৪</p>
+                            <p><span class="font-semibold">আইসিটি ল্যাব:</span> নাই</p>
+                            <p><span class="font-semibold">পাঠাগারের জন্য কক্ষ:</span> ১৩</p>
+                            <p><span class="font-semibold">ভবন সংখ্যা:</span> ০২</p>
                         </div>
                     </div>
 
